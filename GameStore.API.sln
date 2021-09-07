@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStore.API", "GameStore.API\GameStore.API.csproj", "{ECE1F936-74E3-4713-B35D-15D16B2F06C5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStore.Domain", "GameStore.Domain\GameStore.Domain.csproj", "{B3F8A5F2-BCE0-4899-88B6-919ECCC35724}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{ECE1F936-74E3-4713-B35D-15D16B2F06C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECE1F936-74E3-4713-B35D-15D16B2F06C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECE1F936-74E3-4713-B35D-15D16B2F06C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3F8A5F2-BCE0-4899-88B6-919ECCC35724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3F8A5F2-BCE0-4899-88B6-919ECCC35724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3F8A5F2-BCE0-4899-88B6-919ECCC35724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3F8A5F2-BCE0-4899-88B6-919ECCC35724}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
