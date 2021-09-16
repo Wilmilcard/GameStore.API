@@ -20,6 +20,7 @@ namespace GameStore.Domain
                 options => options.UseSqlServer(Configuration.GetConnectionString("Conn")));
             return services;
         }
+
         //Injection del Repositorio
         public static IServiceCollection AddCustomizedRepository(this IServiceCollection services)
         {

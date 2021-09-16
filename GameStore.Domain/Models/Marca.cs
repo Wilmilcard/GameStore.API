@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GameStore.Domain.Models
 {
-    class Marca : IAuditEntity
+    public class Marca : IAuditEntity
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
