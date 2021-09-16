@@ -10,11 +10,14 @@ namespace GameStore.Domain.Models
 {
     public class Alquiler_Dets : IAuditEntity
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
+        [Column("Id")]
+        public int Id { get; set; }
         public int Cantidad { get; set; }
         public int Id_Alquiler { get; set; }
         public int Id_Juego { get; set; }
         public double Valor { get; set; }
-
         public DateTime CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
         [StringLength(50)]

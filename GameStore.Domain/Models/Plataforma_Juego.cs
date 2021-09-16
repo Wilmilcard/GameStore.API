@@ -10,10 +10,12 @@ namespace GameStore.Domain.Models
 {
     public class Plataforma_Juego : IAuditEntity
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
+        [Column("Id")]
+        public int Id { get; set; }
         public int Id_Juego { get; set; }
         public int Id_Plataforma { get; set; }
-
-
         public DateTime CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
         [StringLength(50)]
