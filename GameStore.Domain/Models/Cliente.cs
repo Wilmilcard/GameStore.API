@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace GameStore.Domain.Models
 {
+    [Table("Cliente")]
     public class Cliente : IAuditEntity
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
