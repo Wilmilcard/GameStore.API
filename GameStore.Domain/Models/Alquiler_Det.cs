@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace GameStore.Domain.Models
 {
     [Table("Alquiler_Dets")]
-    public class Alquiler_Dets : IAuditEntity
+    public class Alquiler_Det : IAuditEntity
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]

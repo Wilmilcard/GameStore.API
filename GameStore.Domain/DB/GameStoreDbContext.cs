@@ -17,7 +17,7 @@ namespace GameStore.Domain.DB
         }
 
         public DbSet<Alquiler> Alquiler { get; set; }
-        public DbSet<Alquiler_Dets> Alquiler_Dets { get; set; }
+        public DbSet<Alquiler_Det> Alquiler_Dets { get; set; }
         public DbSet<Cliente> Cliente { get; set; }
         public DbSet<Director> Director { get; set; }
         public DbSet<Estado> Estado { get; set; }
