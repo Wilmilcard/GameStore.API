@@ -16,6 +16,7 @@ namespace GameStore.Domain.Seeders
             DateTime start = new DateTime(1995, 1, 1);
             int range = (DateTime.Today - start).Days;
 
+            #region Estado
             modelBuilder.Entity<Estado>().HasData(
                new Estado
                {
@@ -53,7 +54,9 @@ namespace GameStore.Domain.Seeders
                    CreatedBy = "JDLB"
                }
             );
-            
+            #endregion
+
+            #region Protagonista
             modelBuilder.Entity<Protagonista>().HasData(
                 new Protagonista
                 {
@@ -287,7 +290,9 @@ namespace GameStore.Domain.Seeders
                     CreatedBy = "JDLB"
                 }
             );
+            #endregion
 
+            #region Marca
             modelBuilder.Entity<Marca>().HasData(
                 new Marca
                 {
@@ -353,7 +358,9 @@ namespace GameStore.Domain.Seeders
                     CreatedBy = "JDLB"
                 }
             );
+            #endregion
 
+            #region Plataforma
             modelBuilder.Entity<Plataforma>().HasData(
                 new Plataforma
                 {
@@ -468,74 +475,25 @@ namespace GameStore.Domain.Seeders
                     CreatedBy = "JDLB"
                 }
             );
+            #endregion
 
-            modelBuilder.Entity<Cliente>().HasData(
-                new Cliente
-                {
-                    Id = 1,
-                    Nombre = "Jhon Stalker",
-                    Apellido = "Mayer Ghal",
-                    NombreCompleto = "Jhon Stalker Mayer Ghal",
-                    Email = "jhon.mayer@nevergate.com.co",
-                    Telefono = "000 00 00",
-                    Nacimiento = DateTime.Now.AddYears(-24),
-                    Nit = "000.000.000-0",
-                    CreatedAt = DateTime.Now,
-                    CreatedBy = "JDLB"
-                },
-                new Cliente
-                {
-                    Id = 2,
-                    Nombre = "Laura",
-                    Apellido = "Esquivel Saenz",
-                    NombreCompleto = "Laura Esquivel Saenz",
-                    Email = "laura.saenz@nevergate.com.co",
-                    Telefono = "000 00 00",
-                    Nacimiento = DateTime.Now.AddYears(-20),
-                    Nit = "000.000.000-0",
-                    CreatedAt = DateTime.Now,
-                    CreatedBy = "JDLB"
-                },
-                new Cliente
-                {
-                    Id = 3,
-                    Nombre = "Natalia Maria",
-                    Apellido = "Perez Garces",
-                    NombreCompleto = "Natalia Maria Perez Garces",
-                    Email = "natalia.perez@nevergate.com.co",
-                    Telefono = "000 00 00",
-                    Nacimiento = DateTime.Now.AddYears(-28),
-                    Nit = "000.000.000-0",
-                    CreatedAt = DateTime.Now,
-                    CreatedBy = "JDLB"
-                },
-                new Cliente
-                {
-                    Id = 4,
-                    Nombre = "Andre D'salt",
-                    Apellido = "Lafountane Neil",
-                    NombreCompleto = "Andre D'salt Lafountane Neil",
-                    Email = "andre.lafountane@nevergate.com.co",
-                    Telefono = "000 00 00",
-                    Nacimiento = DateTime.Now.AddYears(-34),
-                    Nit = "000.000.000-0",
-                    CreatedAt = DateTime.Now,
-                    CreatedBy = "JDLB"
-                },
-                new Cliente
-                {
-                    Id = 5,
-                    Nombre = "Anne",
-                    Apellido = "Cedilla Mutis",
-                    NombreCompleto = "Anne Cedilla Mutis",
-                    Email = "anne.cedilla@nevergate.com.co",
-                    Telefono = "000 00 00",
-                    Nacimiento = DateTime.Now.AddYears(-19),
-                    Nit = "000.000.000-0",
-                    CreatedAt = DateTime.Now,
-                    CreatedBy = "JDLB"
-                }
-            );
+            #region Cliente
+            var faker = new Bogus.Faker<Cliente>()
+                    .RuleFor(x => x.Id, f => f.IndexVariable++)
+                    .RuleFor(x => x.Nombre, f => f.Person.FirstName)
+                    .RuleFor(x => x.Apellido, f => f.Person.LastName)
+                    .RuleFor(x => x.NombreCompleto, f => f.Person.FullName)
+                    .RuleFor(x => x.Email, f => f.Person.Email)
+                    .RuleFor(x => x.Telefono, f => f.Person.Phone)
+                    .RuleFor(x => x.Nacimiento, f => f.Person.DateOfBirth)
+                    .RuleFor(x => x.Nit, f => f.Random.Number(100000000, 999999999).ToString())
+                    .RuleFor(x => x.CreatedAt, DateTime.Now)
+                    .RuleFor(x => x.CreatedBy, "JDLB");
+
+            foreach (var p in faker.Generate(50))
+                modelBuilder.Entity<Cliente>().HasData(p);
+            #endregion
+            
 
             modelBuilder.Entity<Alquiler>().HasData(
                 new Alquiler
