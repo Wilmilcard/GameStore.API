@@ -25,7 +25,7 @@ namespace GameStore.Domain.Models
         [Column(TypeName = "VARCHAR(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci")]
         public string NombreCompleto { get; set; }
         [Column("Telefono")]
-        [StringLength(20)] 
+        [StringLength(30)] 
         public string Telefono { get; set; }
         [Column("Nit")]
         [StringLength(30)]

@@ -478,18 +478,19 @@ namespace GameStore.Domain.Seeders
             #endregion
 
             #region Cliente
+            int id = 1;
             var faker = new Bogus.Faker<Cliente>()
-                    .RuleFor(x => x.Id, f => f.IndexVariable++)
+                    .RuleFor(x => x.Id, f => id++)
                     .RuleFor(x => x.Nombre, f => f.Person.FirstName)
                     .RuleFor(x => x.Apellido, f => f.Person.LastName)
                     .RuleFor(x => x.NombreCompleto, f => f.Person.FullName)
                     .RuleFor(x => x.Email, f => f.Person.Email)
-                    .RuleFor(x => x.Telefono, f => f.Person.Phone)
+                    .RuleFor(x => x.Telefono, f => f.Phone.PhoneNumber())
                     .RuleFor(x => x.Nacimiento, f => f.Person.DateOfBirth)
                     .RuleFor(x => x.Nit, f => f.Random.Number(100000000, 999999999).ToString())
                     .RuleFor(x => x.CreatedAt, DateTime.Now)
                     .RuleFor(x => x.CreatedBy, "JDLB");
-
+            
             foreach (var p in faker.Generate(50))
                 modelBuilder.Entity<Cliente>().HasData(p);
             #endregion
