@@ -12,12 +12,15 @@ namespace GameStore.Domain.Seeders
     {
         public static void Seed(this ModelBuilder modelBuilder)
         {
+            Random gen = new Random();
+            DateTime start = new DateTime(1995, 1, 1);
+            int range = (DateTime.Today - start).Days;
+
             modelBuilder.Entity<Estado>().HasData(
                new Estado
                {
                    Id = 1,
                    Nombre = "Activo",
-                   Cod = 'A',
                    CreatedAt = DateTime.Now,
                    CreatedBy = "JDLB"
                },
@@ -25,7 +28,6 @@ namespace GameStore.Domain.Seeders
                {
                    Id = 2,
                    Nombre = "Inactivo",
-                   Cod = 'I',
                    CreatedAt = DateTime.Now,
                    CreatedBy = "JDLB"
                },
@@ -40,7 +42,6 @@ namespace GameStore.Domain.Seeders
                {
                    Id = 4,
                    Nombre = "Prestamo",
-                   Cod = 'P',
                    CreatedAt = DateTime.Now,
                    CreatedBy = "JDLB"
                },
@@ -48,7 +49,6 @@ namespace GameStore.Domain.Seeders
                {
                    Id = 5,
                    Nombre = "Error",
-                   Cod = 'E',
                    CreatedAt = DateTime.Now,
                    CreatedBy = "JDLB"
                }
@@ -476,9 +476,61 @@ namespace GameStore.Domain.Seeders
                     Nombre = "Jhon Stalker",
                     Apellido = "Mayer Ghal",
                     NombreCompleto = "Jhon Stalker Mayer Ghal",
-                    Email = "jhon.m@nevergate.com.co",
+                    Email = "jhon.mayer@nevergate.com.co",
                     Telefono = "000 00 00",
                     Nacimiento = DateTime.Now.AddYears(-24),
+                    Nit = "000.000.000-0",
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Cliente
+                {
+                    Id = 2,
+                    Nombre = "Laura",
+                    Apellido = "Esquivel Saenz",
+                    NombreCompleto = "Laura Esquivel Saenz",
+                    Email = "laura.saenz@nevergate.com.co",
+                    Telefono = "000 00 00",
+                    Nacimiento = DateTime.Now.AddYears(-20),
+                    Nit = "000.000.000-0",
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Cliente
+                {
+                    Id = 3,
+                    Nombre = "Natalia Maria",
+                    Apellido = "Perez Garces",
+                    NombreCompleto = "Natalia Maria Perez Garces",
+                    Email = "natalia.perez@nevergate.com.co",
+                    Telefono = "000 00 00",
+                    Nacimiento = DateTime.Now.AddYears(-28),
+                    Nit = "000.000.000-0",
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Cliente
+                {
+                    Id = 4,
+                    Nombre = "Andre D'salt",
+                    Apellido = "Lafountane Neil",
+                    NombreCompleto = "Andre D'salt Lafountane Neil",
+                    Email = "andre.lafountane@nevergate.com.co",
+                    Telefono = "000 00 00",
+                    Nacimiento = DateTime.Now.AddYears(-34),
+                    Nit = "000.000.000-0",
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Cliente
+                {
+                    Id = 5,
+                    Nombre = "Anne",
+                    Apellido = "Cedilla Mutis",
+                    NombreCompleto = "Anne Cedilla Mutis",
+                    Email = "anne.cedilla@nevergate.com.co",
+                    Telefono = "000 00 00",
+                    Nacimiento = DateTime.Now.AddYears(-19),
                     Nit = "000.000.000-0",
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
@@ -489,11 +541,110 @@ namespace GameStore.Domain.Seeders
                 new Alquiler
                 {
                     Id = 1,
-                    Fecha_Reservacion = DateTime.Now,
-                    Fecha_Devolucion = DateTime.Now.AddDays(60),
-                    Id_Estado = 1,
+                    Fecha_Reservacion = DateTime.Now.AddDays(-100),
+                    Fecha_Devolucion = DateTime.Now.AddDays(-40),
+                    Id_Estado = 3,
                     Id_Cliente = 1,
                     Valor_Total = 75000,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Alquiler
+                {
+                    Id = 2,
+                    Fecha_Reservacion = DateTime.Now.AddDays(-2),
+                    Fecha_Devolucion = DateTime.Now.AddDays(58),
+                    Id_Estado = 4,
+                    Id_Cliente = 2,
+                    Valor_Total = 50000,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Alquiler
+                {
+                    Id = 3,
+                    Fecha_Reservacion = DateTime.Now,
+                    Fecha_Devolucion = DateTime.Now.AddDays(60),
+                    Id_Estado = 4,
+                    Id_Cliente = 3,
+                    Valor_Total = 25000,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Alquiler
+                {
+                    Id = 4,
+                    Fecha_Reservacion = DateTime.Now.AddDays(-65),
+                    Fecha_Devolucion = DateTime.Now.AddDays(-5),
+                    Id_Estado = 3,
+                    Id_Cliente = 3,
+                    Valor_Total = 100000,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Alquiler
+                {
+                    Id = 5,
+                    Fecha_Reservacion = DateTime.Now.AddDays(-7),
+                    Fecha_Devolucion = DateTime.Now.AddDays(53),
+                    Id_Estado = 4,
+                    Id_Cliente = 4,
+                    Valor_Total = 75000,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Alquiler
+                {
+                    Id = 6,
+                    Fecha_Reservacion = DateTime.Now,
+                    Fecha_Devolucion = DateTime.Now.AddDays(60),
+                    Id_Estado = 5,
+                    Id_Cliente = 5,
+                    Valor_Total = 25000,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Alquiler
+                {
+                    Id = 7,
+                    Fecha_Reservacion = DateTime.Now.AddDays(-72),
+                    Fecha_Devolucion = DateTime.Now.AddDays(-12),
+                    Id_Estado = 3,
+                    Id_Cliente = 4,
+                    Valor_Total = 50000,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Alquiler
+                {
+                    Id = 8,
+                    Fecha_Reservacion = DateTime.Now.AddDays(-83),
+                    Fecha_Devolucion = DateTime.Now.AddDays(-23),
+                    Id_Estado = 3,
+                    Id_Cliente = 2,
+                    Valor_Total = 25000,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Alquiler
+                {
+                    Id = 9,
+                    Fecha_Reservacion = DateTime.Now,
+                    Fecha_Devolucion = DateTime.Now.AddDays(60),
+                    Id_Estado = 5,
+                    Id_Cliente = 2,
+                    Valor_Total = 125000,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Alquiler
+                {
+                    Id = 10,
+                    Fecha_Reservacion = DateTime.Now.AddDays(-1),
+                    Fecha_Devolucion = DateTime.Now.AddDays(59),
+                    Id_Estado = 4,
+                    Id_Cliente = 1,
+                    Valor_Total = 50000,
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 }
@@ -520,7 +671,159 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 3,
                     Nombre = "Hidetaka Miyazaki",
+                    Id_Marca = 3,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Director
+                {
+                    Id = 4,
+                    Nombre = "Tim Schafer",
+                    Id_Marca = 4,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Director
+                {
+                    Id = 5,
+                    Nombre = "Ken Levine",
+                    Id_Marca = 5,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Director
+                {
+                    Id = 6,
+                    Nombre = "Fumito Ueda",
+                    Id_Marca = 6,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Director
+                {
+                    Id = 7,
+                    Nombre = "Yves Guillemot",
+                    Id_Marca = 7,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Director
+                {
+                    Id = 8,
+                    Nombre = "Gabe Newell",
+                    Id_Marca = 8,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Director
+                {
+                    Id = 9,
+                    Nombre = "Tom Howard",
+                    Id_Marca = 9,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Director
+                {
+                    Id = 10,
+                    Nombre = "Yoko Taro",
+                    Id_Marca = 3,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Director
+                {
+                    Id = 11,
+                    Nombre = "Shigeru Miyamoto",
                     Id_Marca = 2,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Director
+                {
+                    Id = 12,
+                    Nombre = "Amy Hennig",
+                    Id_Marca = 5,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Director
+                {
+                    Id = 13,
+                    Nombre = "Michel Ancel",
+                    Id_Marca = 6,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Director
+                {
+                    Id = 14,
+                    Nombre = "Goichi Suda",
+                    Id_Marca = 6,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Director
+                {
+                    Id = 15,
+                    Nombre = "Warren Spector",
+                    Id_Marca = 7,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Director
+                {
+                    Id = 16,
+                    Nombre = "John Romero",
+                    Id_Marca = 1,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Director
+                {
+                    Id = 17,
+                    Nombre = "Yuji Horii",
+                    Id_Marca = 2,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Director
+                {
+                    Id = 18,
+                    Nombre = "Yuji Naka",
+                    Id_Marca = 3,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Director
+                {
+                    Id = 19,
+                    Nombre = "Sid Meier",
+                    Id_Marca = 7,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Director
+                {
+                    Id = 20,
+                    Nombre = "John Carmack",
+                    Id_Marca = 9,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Director
+                {
+                    Id = 21,
+                    Nombre = "Keiji Inafune",
+                    Id_Marca = 3,
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Director
+                {
+                    Id = 22,
+                    Nombre = "Hironobu Sakaguchi",
+                    Id_Marca = 6,
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 }
@@ -532,7 +835,450 @@ namespace GameStore.Domain.Seeders
                     Id = 1,
                     Nombre = "Assassins Creed I",
                     Id_Director = 1,
-                    Lanzamiento = new DateTime(2001, 5, 13)
+                    Lanzamiento = new DateTime(2001, 5, 13),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 2,
+                    Nombre = "Assassins Creed Valhalla",
+                    Id_Director = 2,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 3,
+                    Nombre = "GTA III",
+                    Id_Director = 3,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 4,
+                    Nombre = "GTA Vice City",
+                    Id_Director = 5,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 5,
+                    Nombre = "GTA San Andreas",
+                    Id_Director = 4,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 6,
+                    Nombre = "GTA IV",
+                    Id_Director = 14,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 7,
+                    Nombre = "GTA V",
+                    Id_Director = 2,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 8,
+                    Nombre = "FIFA 17",
+                    Id_Director = 22,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 9,
+                    Nombre = "FIFA 18",
+                    Id_Director = 20,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 10,
+                    Nombre = "FIFA 19",
+                    Id_Director = 16,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 11,
+                    Nombre = "FIFA 20",
+                    Id_Director = 19,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 12,
+                    Nombre = "FIFA 21",
+                    Id_Director = 18,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 13,
+                    Nombre = "Minecraft",
+                    Id_Director = 3,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 14,
+                    Nombre = "Gears Of War",
+                    Id_Director = 4,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 15,
+                    Nombre = "Watch_Dogs",
+                    Id_Director = 8,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 16,
+                    Nombre = "Watch_Dogs 2",
+                    Id_Director = 7,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 17,
+                    Nombre = "The Witcher",
+                    Id_Director = 7,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 18,
+                    Nombre = "The Witcher 2",
+                    Id_Director = 7,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 19,
+                    Nombre = "The Witcher 3",
+                    Id_Director = 6,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 20,
+                    Nombre = "Pokemon",
+                    Id_Director = 4,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 21,
+                    Nombre = "Age Of Empires",
+                    Id_Director = 11,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 22,
+                    Nombre = "Age Of Empires II",
+                    Id_Director = 12,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 23,
+                    Nombre = "Age Of Empires III",
+                    Id_Director = 12,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 24,
+                    Nombre = "Age Of Empires IV",
+                    Id_Director = 8,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 25,
+                    Nombre = "Red Dead Redemption II",
+                    Id_Director = 23,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 26,
+                    Nombre = "DOOM",
+                    Id_Director = 1,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 27,
+                    Nombre = "Pong",
+                    Id_Director = 2,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 28,
+                    Nombre = "The Sims",
+                    Id_Director = 10,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 29,
+                    Nombre = "The Sims 2",
+                    Id_Director = 12,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 30,
+                    Nombre = "Halo",
+                    Id_Director = 13,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 31,
+                    Nombre = "Angry Birds",
+                    Id_Director = 15,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 32,
+                    Nombre = "Plants vs Zombies",
+                    Id_Director = 17,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 33,
+                    Nombre = "Battlefield 3",
+                    Id_Director = 2,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 34,
+                    Nombre = "Fligth Simulation",
+                    Id_Director = 6,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 35,
+                    Nombre = "Chivarly II",
+                    Id_Director = 9,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 36,
+                    Nombre = "Pureya",
+                    Id_Director = 11,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 37,
+                    Nombre = "Rust",
+                    Id_Director = 17,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 38,
+                    Nombre = "Mass Effect: Legendary Edition",
+                    Id_Director = 21,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 39,
+                    Nombre = "Cyberpunk 2077",
+                    Id_Director = 21,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 40,
+                    Nombre = "The Last of Us 2",
+                    Id_Director = 18,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 41,
+                    Nombre = "Overwatch",
+                    Id_Director = 23,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 42,
+                    Nombre = "NBA 2K21",
+                    Id_Director = 10,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 43,
+                    Nombre = "Fortnite",
+                    Id_Director = 23,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 44,
+                    Nombre = "Star Wars: Squadrons",
+                    Id_Director = 1,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 45,
+                    Nombre = "Resident Evil 8: Village",
+                    Id_Director = 2,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 46,
+                    Nombre = "Heroes of the Storm",
+                    Id_Director = 8,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 47,
+                    Nombre = "Battefield 4",
+                    Id_Director = 16,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 48,
+                    Nombre = "Battlefield 2042",
+                    Id_Director = 13,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 49,
+                    Nombre = "florence",
+                    Id_Director = 12,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
+                },
+                new Juego
+                {
+                    Id = 50,
+                    Nombre = "portal",
+                    Id_Director = 17,
+                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    CreatedAt = DateTime.Now,
+                    CreatedBy = "JDLB"
                 }
             );
 
