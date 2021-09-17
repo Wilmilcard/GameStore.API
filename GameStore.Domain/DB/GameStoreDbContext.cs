@@ -1,4 +1,5 @@
 ﻿using GameStore.Domain.Models;
+using GameStore.Domain.Seeders;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -26,5 +27,10 @@ namespace GameStore.Domain.DB
         public DbSet<Plataforma_Juego> Plataforma_Juego { get; set; }
         public DbSet<Protagonista> Protagonista { get; set; }
         public DbSet<Protagonista_Juego> Protagonista_Juego { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Seed();
+        }
     }
 }
