@@ -502,7 +502,7 @@ namespace GameStore.Domain.Seeders
             var fakerAlquiler = new Bogus.Faker<Alquiler>()
                 .RuleFor(x => x.Id, f => id++)
                 .RuleFor(x => x.Id_Cliente, f => random.Next(50))
-                .RuleFor(x => x.Valor_Total, f => f.Random.Double(25000, 150000))
+                .RuleFor(x => x.Valor_Total, f => f.Random.Number(25000, 150000))
                 .RuleFor(x => x.CreatedAt, DateTime.Now)
                 .RuleFor(x => x.CreatedBy, "JDLB");
 
@@ -1189,7 +1189,7 @@ namespace GameStore.Domain.Seeders
                 .RuleFor(x => x.Id_Alquiler, f => random.Next(100))
                 .RuleFor(x => x.Id_Juego, f => random.Next(50))
                 .RuleFor(x => x.Cantidad, f => random.Next(10))
-                .RuleFor(x => x.Cantidad, f => f.Random.Double(25000, 150000))
+                .RuleFor(x => x.Cantidad, f => f.Random.Number(25000, 150000))
                 .RuleFor(x => x.CreatedAt, DateTime.Now)
                 .RuleFor(x => x.CreatedBy, "JDLB");
 
@@ -1197,5 +1197,6 @@ namespace GameStore.Domain.Seeders
                 modelBuilder.Entity<Alquiler_Det>().HasData(ad);
             #endregion
         }
+
     }
 }
