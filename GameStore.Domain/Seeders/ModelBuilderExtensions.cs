@@ -12,9 +12,12 @@ namespace GameStore.Domain.Seeders
     {
         public static void Seed(this ModelBuilder modelBuilder)
         {
-            Random gen = new Random();
-            DateTime start = new DateTime(1995, 1, 1);
-            int range = (DateTime.Today - start).Days;
+            var random = new Random();
+            var start = new DateTime(1995, 1, 1);
+            var startYear = new DateTime(2021, 1, 1);
+            var range = (DateTime.Today - start).Days;
+            var daysOfYear = (DateTime.Today - startYear).Days;
+            var id = 1;
 
             #region Estado
             modelBuilder.Entity<Estado>().HasData(
@@ -193,7 +196,7 @@ namespace GameStore.Domain.Seeders
                 },
                 new Protagonista
                 {
-                    Id =20,
+                    Id = 20,
                     Nombre = "Glados",
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
@@ -478,8 +481,7 @@ namespace GameStore.Domain.Seeders
             #endregion
 
             #region Cliente
-            int id = 1;
-            var faker = new Bogus.Faker<Cliente>()
+            var fakerCliente = new Bogus.Faker<Cliente>()
                     .RuleFor(x => x.Id, f => id++)
                     .RuleFor(x => x.Nombre, f => f.Person.FirstName)
                     .RuleFor(x => x.Apellido, f => f.Person.LastName)
@@ -490,131 +492,41 @@ namespace GameStore.Domain.Seeders
                     .RuleFor(x => x.Nit, f => f.Random.Number(100000000, 999999999).ToString())
                     .RuleFor(x => x.CreatedAt, DateTime.Now)
                     .RuleFor(x => x.CreatedBy, "JDLB");
-            
-            foreach (var p in faker.Generate(50))
+
+            foreach (var p in fakerCliente.Generate(50))
                 modelBuilder.Entity<Cliente>().HasData(p);
             #endregion
-            
 
-            modelBuilder.Entity<Alquiler>().HasData(
-                new Alquiler
-                {
-                    Id = 1,
-                    Fecha_Reservacion = DateTime.Now.AddDays(-100),
-                    Fecha_Devolucion = DateTime.Now.AddDays(-40),
-                    Id_Estado = 3,
-                    Id_Cliente = 1,
-                    Valor_Total = 75000,
-                    CreatedAt = DateTime.Now,
-                    CreatedBy = "JDLB"
-                },
-                new Alquiler
-                {
-                    Id = 2,
-                    Fecha_Reservacion = DateTime.Now.AddDays(-2),
-                    Fecha_Devolucion = DateTime.Now.AddDays(58),
-                    Id_Estado = 4,
-                    Id_Cliente = 2,
-                    Valor_Total = 50000,
-                    CreatedAt = DateTime.Now,
-                    CreatedBy = "JDLB"
-                },
-                new Alquiler
-                {
-                    Id = 3,
-                    Fecha_Reservacion = DateTime.Now,
-                    Fecha_Devolucion = DateTime.Now.AddDays(60),
-                    Id_Estado = 4,
-                    Id_Cliente = 3,
-                    Valor_Total = 25000,
-                    CreatedAt = DateTime.Now,
-                    CreatedBy = "JDLB"
-                },
-                new Alquiler
-                {
-                    Id = 4,
-                    Fecha_Reservacion = DateTime.Now.AddDays(-65),
-                    Fecha_Devolucion = DateTime.Now.AddDays(-5),
-                    Id_Estado = 3,
-                    Id_Cliente = 3,
-                    Valor_Total = 100000,
-                    CreatedAt = DateTime.Now,
-                    CreatedBy = "JDLB"
-                },
-                new Alquiler
-                {
-                    Id = 5,
-                    Fecha_Reservacion = DateTime.Now.AddDays(-7),
-                    Fecha_Devolucion = DateTime.Now.AddDays(53),
-                    Id_Estado = 4,
-                    Id_Cliente = 4,
-                    Valor_Total = 75000,
-                    CreatedAt = DateTime.Now,
-                    CreatedBy = "JDLB"
-                },
-                new Alquiler
-                {
-                    Id = 6,
-                    Fecha_Reservacion = DateTime.Now,
-                    Fecha_Devolucion = DateTime.Now.AddDays(60),
-                    Id_Estado = 5,
-                    Id_Cliente = 5,
-                    Valor_Total = 25000,
-                    CreatedAt = DateTime.Now,
-                    CreatedBy = "JDLB"
-                },
-                new Alquiler
-                {
-                    Id = 7,
-                    Fecha_Reservacion = DateTime.Now.AddDays(-72),
-                    Fecha_Devolucion = DateTime.Now.AddDays(-12),
-                    Id_Estado = 3,
-                    Id_Cliente = 4,
-                    Valor_Total = 50000,
-                    CreatedAt = DateTime.Now,
-                    CreatedBy = "JDLB"
-                },
-                new Alquiler
-                {
-                    Id = 8,
-                    Fecha_Reservacion = DateTime.Now.AddDays(-83),
-                    Fecha_Devolucion = DateTime.Now.AddDays(-23),
-                    Id_Estado = 3,
-                    Id_Cliente = 2,
-                    Valor_Total = 25000,
-                    CreatedAt = DateTime.Now,
-                    CreatedBy = "JDLB"
-                },
-                new Alquiler
-                {
-                    Id = 9,
-                    Fecha_Reservacion = DateTime.Now,
-                    Fecha_Devolucion = DateTime.Now.AddDays(60),
-                    Id_Estado = 5,
-                    Id_Cliente = 2,
-                    Valor_Total = 125000,
-                    CreatedAt = DateTime.Now,
-                    CreatedBy = "JDLB"
-                },
-                new Alquiler
-                {
-                    Id = 10,
-                    Fecha_Reservacion = DateTime.Now.AddDays(-1),
-                    Fecha_Devolucion = DateTime.Now.AddDays(59),
-                    Id_Estado = 4,
-                    Id_Cliente = 1,
-                    Valor_Total = 50000,
-                    CreatedAt = DateTime.Now,
-                    CreatedBy = "JDLB"
-                }
-            );
+            #region Alquiler
+            id = 1;
+            var fakerAlquiler = new Bogus.Faker<Alquiler>()
+                .RuleFor(x => x.Id, f => id++)
+                .RuleFor(x => x.Id_Cliente, f => random.Next(50))
+                .RuleFor(x => x.Valor_Total, f => f.Random.Double(25000, 150000))
+                .RuleFor(x => x.CreatedAt, DateTime.Now)
+                .RuleFor(x => x.CreatedBy, "JDLB");
 
+            foreach (var a in fakerAlquiler.Generate(100))
+            {
+                var dias = random.Next(1, 90);
+                var _r = startYear.AddDays(random.Next(daysOfYear));
+                var _d = _r.AddDays(dias);
+
+                a.Fecha_Reservacion = _r;
+                a.Fecha_Devolucion = _d;
+                a.Id_Estado = random.Next(100) <= 50 ? 4 : 3;
+
+                modelBuilder.Entity<Alquiler>().HasData(a);
+            }
+            #endregion
+
+            #region Director
             modelBuilder.Entity<Director>().HasData(
                 new Director
                 {
                     Id = 1,
                     Nombre = "Hideo Kojima",
-                    Id_Marca = 1,
+                    Id_Marca = random.Next(9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -622,7 +534,7 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 2,
                     Nombre = "Will Wriths",
-                    Id_Marca = 2,
+                    Id_Marca = random.Next(9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -630,7 +542,7 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 3,
                     Nombre = "Hidetaka Miyazaki",
-                    Id_Marca = 3,
+                    Id_Marca = random.Next(9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -638,7 +550,7 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 4,
                     Nombre = "Tim Schafer",
-                    Id_Marca = 4,
+                    Id_Marca = random.Next(9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -646,7 +558,7 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 5,
                     Nombre = "Ken Levine",
-                    Id_Marca = 5,
+                    Id_Marca = random.Next(9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -654,7 +566,7 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 6,
                     Nombre = "Fumito Ueda",
-                    Id_Marca = 6,
+                    Id_Marca = random.Next(9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -662,7 +574,7 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 7,
                     Nombre = "Yves Guillemot",
-                    Id_Marca = 7,
+                    Id_Marca = random.Next(9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -670,7 +582,7 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 8,
                     Nombre = "Gabe Newell",
-                    Id_Marca = 8,
+                    Id_Marca = random.Next(9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -678,7 +590,7 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 9,
                     Nombre = "Tom Howard",
-                    Id_Marca = 9,
+                    Id_Marca = random.Next(9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -686,7 +598,7 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 10,
                     Nombre = "Yoko Taro",
-                    Id_Marca = 3,
+                    Id_Marca = random.Next(9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -694,7 +606,7 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 11,
                     Nombre = "Shigeru Miyamoto",
-                    Id_Marca = 2,
+                    Id_Marca = random.Next(9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -702,7 +614,7 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 12,
                     Nombre = "Amy Hennig",
-                    Id_Marca = 5,
+                    Id_Marca = random.Next(9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -710,7 +622,7 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 13,
                     Nombre = "Michel Ancel",
-                    Id_Marca = 6,
+                    Id_Marca = random.Next(9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -718,7 +630,7 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 14,
                     Nombre = "Goichi Suda",
-                    Id_Marca = 6,
+                    Id_Marca = random.Next(9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -726,7 +638,7 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 15,
                     Nombre = "Warren Spector",
-                    Id_Marca = 7,
+                    Id_Marca = random.Next(9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -734,7 +646,7 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 16,
                     Nombre = "John Romero",
-                    Id_Marca = 1,
+                    Id_Marca = random.Next(9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -742,7 +654,7 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 17,
                     Nombre = "Yuji Horii",
-                    Id_Marca = 2,
+                    Id_Marca = random.Next(9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -750,7 +662,7 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 18,
                     Nombre = "Yuji Naka",
-                    Id_Marca = 3,
+                    Id_Marca = random.Next(9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -758,7 +670,7 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 19,
                     Nombre = "Sid Meier",
-                    Id_Marca = 7,
+                    Id_Marca = random.Next(9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -766,7 +678,7 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 20,
                     Nombre = "John Carmack",
-                    Id_Marca = 9,
+                    Id_Marca = random.Next(9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -774,7 +686,7 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 21,
                     Nombre = "Keiji Inafune",
-                    Id_Marca = 3,
+                    Id_Marca = random.Next(9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -782,12 +694,14 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 22,
                     Nombre = "Hironobu Sakaguchi",
-                    Id_Marca = 6,
+                    Id_Marca = random.Next(9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 }
             );
+            #endregion
 
+            #region Juego
             modelBuilder.Entity<Juego>().HasData(
                 new Juego
                 {
@@ -803,7 +717,7 @@ namespace GameStore.Domain.Seeders
                     Id = 2,
                     Nombre = "Assassins Creed Valhalla",
                     Id_Director = 2,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -812,7 +726,7 @@ namespace GameStore.Domain.Seeders
                     Id = 3,
                     Nombre = "GTA III",
                     Id_Director = 3,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -821,7 +735,7 @@ namespace GameStore.Domain.Seeders
                     Id = 4,
                     Nombre = "GTA Vice City",
                     Id_Director = 5,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -830,7 +744,7 @@ namespace GameStore.Domain.Seeders
                     Id = 5,
                     Nombre = "GTA San Andreas",
                     Id_Director = 4,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -839,7 +753,7 @@ namespace GameStore.Domain.Seeders
                     Id = 6,
                     Nombre = "GTA IV",
                     Id_Director = 14,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -848,7 +762,7 @@ namespace GameStore.Domain.Seeders
                     Id = 7,
                     Nombre = "GTA V",
                     Id_Director = 2,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -857,7 +771,7 @@ namespace GameStore.Domain.Seeders
                     Id = 8,
                     Nombre = "FIFA 17",
                     Id_Director = 22,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -866,7 +780,7 @@ namespace GameStore.Domain.Seeders
                     Id = 9,
                     Nombre = "FIFA 18",
                     Id_Director = 20,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -875,7 +789,7 @@ namespace GameStore.Domain.Seeders
                     Id = 10,
                     Nombre = "FIFA 19",
                     Id_Director = 16,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -884,7 +798,7 @@ namespace GameStore.Domain.Seeders
                     Id = 11,
                     Nombre = "FIFA 20",
                     Id_Director = 19,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -893,7 +807,7 @@ namespace GameStore.Domain.Seeders
                     Id = 12,
                     Nombre = "FIFA 21",
                     Id_Director = 18,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -902,7 +816,7 @@ namespace GameStore.Domain.Seeders
                     Id = 13,
                     Nombre = "Minecraft",
                     Id_Director = 3,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -911,7 +825,7 @@ namespace GameStore.Domain.Seeders
                     Id = 14,
                     Nombre = "Gears Of War",
                     Id_Director = 4,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -920,7 +834,7 @@ namespace GameStore.Domain.Seeders
                     Id = 15,
                     Nombre = "Watch_Dogs",
                     Id_Director = 8,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -929,7 +843,7 @@ namespace GameStore.Domain.Seeders
                     Id = 16,
                     Nombre = "Watch_Dogs 2",
                     Id_Director = 7,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -938,7 +852,7 @@ namespace GameStore.Domain.Seeders
                     Id = 17,
                     Nombre = "The Witcher",
                     Id_Director = 7,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -947,7 +861,7 @@ namespace GameStore.Domain.Seeders
                     Id = 18,
                     Nombre = "The Witcher 2",
                     Id_Director = 7,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -956,7 +870,7 @@ namespace GameStore.Domain.Seeders
                     Id = 19,
                     Nombre = "The Witcher 3",
                     Id_Director = 6,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -965,7 +879,7 @@ namespace GameStore.Domain.Seeders
                     Id = 20,
                     Nombre = "Pokemon",
                     Id_Director = 4,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -974,7 +888,7 @@ namespace GameStore.Domain.Seeders
                     Id = 21,
                     Nombre = "Age Of Empires",
                     Id_Director = 11,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -983,7 +897,7 @@ namespace GameStore.Domain.Seeders
                     Id = 22,
                     Nombre = "Age Of Empires II",
                     Id_Director = 12,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -992,7 +906,7 @@ namespace GameStore.Domain.Seeders
                     Id = 23,
                     Nombre = "Age Of Empires III",
                     Id_Director = 12,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -1001,7 +915,7 @@ namespace GameStore.Domain.Seeders
                     Id = 24,
                     Nombre = "Age Of Empires IV",
                     Id_Director = 8,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -1010,7 +924,7 @@ namespace GameStore.Domain.Seeders
                     Id = 25,
                     Nombre = "Red Dead Redemption II",
                     Id_Director = 23,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -1019,7 +933,7 @@ namespace GameStore.Domain.Seeders
                     Id = 26,
                     Nombre = "DOOM",
                     Id_Director = 1,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -1028,7 +942,7 @@ namespace GameStore.Domain.Seeders
                     Id = 27,
                     Nombre = "Pong",
                     Id_Director = 2,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -1037,7 +951,7 @@ namespace GameStore.Domain.Seeders
                     Id = 28,
                     Nombre = "The Sims",
                     Id_Director = 10,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -1046,7 +960,7 @@ namespace GameStore.Domain.Seeders
                     Id = 29,
                     Nombre = "The Sims 2",
                     Id_Director = 12,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -1055,7 +969,7 @@ namespace GameStore.Domain.Seeders
                     Id = 30,
                     Nombre = "Halo",
                     Id_Director = 13,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -1064,7 +978,7 @@ namespace GameStore.Domain.Seeders
                     Id = 31,
                     Nombre = "Angry Birds",
                     Id_Director = 15,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -1073,7 +987,7 @@ namespace GameStore.Domain.Seeders
                     Id = 32,
                     Nombre = "Plants vs Zombies",
                     Id_Director = 17,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -1082,7 +996,7 @@ namespace GameStore.Domain.Seeders
                     Id = 33,
                     Nombre = "Battlefield 3",
                     Id_Director = 2,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -1091,7 +1005,7 @@ namespace GameStore.Domain.Seeders
                     Id = 34,
                     Nombre = "Fligth Simulation",
                     Id_Director = 6,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -1100,7 +1014,7 @@ namespace GameStore.Domain.Seeders
                     Id = 35,
                     Nombre = "Chivarly II",
                     Id_Director = 9,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -1109,7 +1023,7 @@ namespace GameStore.Domain.Seeders
                     Id = 36,
                     Nombre = "Pureya",
                     Id_Director = 11,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -1118,7 +1032,7 @@ namespace GameStore.Domain.Seeders
                     Id = 37,
                     Nombre = "Rust",
                     Id_Director = 17,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -1127,7 +1041,7 @@ namespace GameStore.Domain.Seeders
                     Id = 38,
                     Nombre = "Mass Effect: Legendary Edition",
                     Id_Director = 21,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -1136,7 +1050,7 @@ namespace GameStore.Domain.Seeders
                     Id = 39,
                     Nombre = "Cyberpunk 2077",
                     Id_Director = 21,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -1145,7 +1059,7 @@ namespace GameStore.Domain.Seeders
                     Id = 40,
                     Nombre = "The Last of Us 2",
                     Id_Director = 18,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -1154,7 +1068,7 @@ namespace GameStore.Domain.Seeders
                     Id = 41,
                     Nombre = "Overwatch",
                     Id_Director = 23,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -1163,7 +1077,7 @@ namespace GameStore.Domain.Seeders
                     Id = 42,
                     Nombre = "NBA 2K21",
                     Id_Director = 10,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -1172,7 +1086,7 @@ namespace GameStore.Domain.Seeders
                     Id = 43,
                     Nombre = "Fortnite",
                     Id_Director = 23,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -1181,7 +1095,7 @@ namespace GameStore.Domain.Seeders
                     Id = 44,
                     Nombre = "Star Wars: Squadrons",
                     Id_Director = 1,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -1190,7 +1104,7 @@ namespace GameStore.Domain.Seeders
                     Id = 45,
                     Nombre = "Resident Evil 8: Village",
                     Id_Director = 2,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -1199,7 +1113,7 @@ namespace GameStore.Domain.Seeders
                     Id = 46,
                     Nombre = "Heroes of the Storm",
                     Id_Director = 8,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -1208,7 +1122,7 @@ namespace GameStore.Domain.Seeders
                     Id = 47,
                     Nombre = "Battefield 4",
                     Id_Director = 16,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -1217,7 +1131,7 @@ namespace GameStore.Domain.Seeders
                     Id = 48,
                     Nombre = "Battlefield 2042",
                     Id_Director = 13,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -1226,7 +1140,7 @@ namespace GameStore.Domain.Seeders
                     Id = 49,
                     Nombre = "florence",
                     Id_Director = 12,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 },
@@ -1235,46 +1149,53 @@ namespace GameStore.Domain.Seeders
                     Id = 50,
                     Nombre = "portal",
                     Id_Director = 17,
-                    Lanzamiento = start.AddDays(gen.Next(range)),
+                    Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = "JDLB"
                 }
             );
+            #endregion
 
-            modelBuilder.Entity<Plataforma_Juego>().HasData(
-                new Plataforma_Juego
-                {
-                    Id = 1,
-                    Id_Juego = 1,
-                    Id_Plataforma = 2,
-                    CreatedAt = DateTime.Now,
-                    CreatedBy = "JDLB"
-                }
-            );
+            #region Plataforma_Juego
+            id = 1;
+            var fakerPlataformaJuego = new Bogus.Faker<Plataforma_Juego>()
+                .RuleFor(x => x.Id, f => id++)
+                .RuleFor(x => x.Id_Juego, f => random.Next(50))
+                .RuleFor(x => x.Id_Plataforma, f => random.Next(16))
+                .RuleFor(x => x.CreatedAt, DateTime.Now)
+                .RuleFor(x => x.CreatedBy, "JDLB");
 
-            modelBuilder.Entity<Protagonista_Juego>().HasData(
-                new Protagonista_Juego
-                {
-                    Id = 1,
-                    Id_Juego = 1,
-                    Id_Protagonista = 1,
-                    CreatedAt = DateTime.Now,
-                    CreatedBy = "JDLB"
-                }
-            );
+            foreach (var pj in fakerPlataformaJuego.Generate(100))
+                modelBuilder.Entity<Plataforma_Juego>().HasData(pj);
+            #endregion
 
-            modelBuilder.Entity<Alquiler_Det>().HasData(
-                new Alquiler_Det
-                {
-                    Id = 1,
-                    Id_Alquiler = 1,
-                    Id_Juego = 1,
-                    Cantidad = 5,
-                    Valor = 5 * 15000,
-                    CreatedAt = DateTime.Now,
-                    CreatedBy = "JDLB"
-                }
-            );
+            #region Protagonista_Juego
+            id = 1;
+            var fakerProtagonistaJuego = new Bogus.Faker<Protagonista_Juego>()
+                .RuleFor(x => x.Id, f => id++)
+                .RuleFor(x => x.Id_Juego, f => random.Next(50))
+                .RuleFor(x => x.Id_Protagonista, f => random.Next(33))
+                .RuleFor(x => x.CreatedAt, DateTime.Now)
+                .RuleFor(x => x.CreatedBy, "JDLB");
+
+            foreach (var pj in fakerProtagonistaJuego.Generate(60))
+                modelBuilder.Entity<Plataforma_Juego>().HasData(pj);
+            #endregion
+
+            #region Alquler_Det
+            id = 1;
+            var fakerAlquilerDet = new Bogus.Faker<Alquiler_Det>()
+                .RuleFor(x => x.Id, f => id++)
+                .RuleFor(x => x.Id_Alquiler, f => random.Next(100))
+                .RuleFor(x => x.Id_Juego, f => random.Next(50))
+                .RuleFor(x => x.Cantidad, f => random.Next(10))
+                .RuleFor(x => x.Cantidad, f => f.Random.Double(25000, 150000))
+                .RuleFor(x => x.CreatedAt, DateTime.Now)
+                .RuleFor(x => x.CreatedBy, "JDLB");
+
+            foreach (var ad in fakerAlquilerDet.Generate(100))
+                modelBuilder.Entity<Alquiler_Det>().HasData(ad);
+            #endregion
         }
     }
 }
