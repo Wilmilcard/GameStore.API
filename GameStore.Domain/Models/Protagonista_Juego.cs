@@ -17,11 +17,15 @@ namespace GameStore.Domain.Models
         public int Id { get; set; }
         public int Id_Juego { get; set; }
         public int Id_Protagonista { get; set; }
+        
+
+        //Auditory
         public DateTime CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
         [StringLength(50)]
         [Column(TypeName = "VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci")]
         public string CreatedBy { get; set; }
+
 
         //Public Foreign Key
         public virtual Juego Juego { get; set; }

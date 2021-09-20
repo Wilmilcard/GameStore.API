@@ -35,7 +35,8 @@ namespace GameStore.Domain.Models
         public string Email { get; set; }
         public DateTime? Nacimiento { get; set; }
 
-
+        
+        //Auditory
         public DateTime CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
         [StringLength(50)]

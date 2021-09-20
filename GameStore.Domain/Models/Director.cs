@@ -21,10 +21,15 @@ namespace GameStore.Domain.Models
         public string Nombre { get; set; }
 
 
+        //Auditory
         public DateTime CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
         [StringLength(50)]
         [Column(TypeName = "VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci")]
         public string CreatedBy { get; set; }
-    }
+
+
+        //Public Foreign Key
+        public virtual Marca Marca { get; set; }
+}
 }

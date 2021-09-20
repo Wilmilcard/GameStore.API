@@ -20,6 +20,7 @@ namespace GameStore.Domain.Models
         public string Nombre { get; set; }
 
 
+        //Auditory
         public DateTime CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
         [StringLength(50)]

@@ -21,10 +21,17 @@ namespace GameStore.Domain.Models
         public DateTime? Fecha_Devolucion { get; set; }
         public double Valor_Total { get; set; }
 
+
+        //Auditory
         public DateTime CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
         [StringLength(50)]
         [Column(TypeName = "VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci")]
         public string CreatedBy { get; set; }
+
+        
+        //Public Foreign Key
+        public virtual Cliente Cliente { get; set; }
+        public virtual Estado Estado { get; set; }
     }
 }

@@ -18,6 +18,9 @@ namespace GameStore.Domain.Models
         [StringLength(80)]
         [Column(TypeName = "VARCHAR(80) CHARACTER SET utf8 COLLATE utf8_unicode_ci")]
         public string Nombre { get; set; }
+
+        
+        //Auditory
         public DateTime CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
         [StringLength(50)]
