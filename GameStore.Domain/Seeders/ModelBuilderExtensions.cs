@@ -1178,8 +1178,8 @@ namespace GameStore.Domain.Seeders
                 .RuleFor(x => x.CreatedAt, DateTime.Now)
                 .RuleFor(x => x.CreatedBy, "JDLB");
 
-            foreach (var prj in fakerProtagonistaJuego.Generate(60))
-                modelBuilder.Entity<Plataforma_Juego>().HasData(prj);
+            foreach (var pj in fakerProtagonistaJuego.Generate(60))
+                modelBuilder.Entity<Protagonista_Juego>().HasData(pj);
             #endregion
 
             #region Alquler_Det
