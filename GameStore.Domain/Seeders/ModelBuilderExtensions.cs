@@ -1156,46 +1156,46 @@ namespace GameStore.Domain.Seeders
             );
             #endregion
 
-            #region Plataforma_Juego
-            id = 1;
-            var fakerPlataformaJuego = new Bogus.Faker<Plataforma_Juego>()
-                .RuleFor(x => x.Id, f => id++)
-                .RuleFor(x => x.Id_Juego, f => random.Next(50))
-                .RuleFor(x => x.Id_Plataforma, f => random.Next(16))
-                .RuleFor(x => x.CreatedAt, DateTime.Now)
-                .RuleFor(x => x.CreatedBy, "JDLB");
+            //#region Plataforma_Juego
+            //id = 1;
+            //var fakerPlataformaJuego = new Bogus.Faker<Plataforma_Juego>()
+            //    .RuleFor(x => x.Id, f => id++)
+            //    .RuleFor(x => x.Id_Juego, f => random.Next(50))
+            //    .RuleFor(x => x.Id_Plataforma, f => random.Next(16))
+            //    .RuleFor(x => x.CreatedAt, DateTime.Now)
+            //    .RuleFor(x => x.CreatedBy, "JDLB");
 
-            foreach (var pj in fakerPlataformaJuego.Generate(100))
-                modelBuilder.Entity<Plataforma_Juego>().HasData(pj);
-            #endregion
+            //foreach (var pj in fakerPlataformaJuego.Generate(100))
+            //    modelBuilder.Entity<Plataforma_Juego>().HasData(pj);
+            //#endregion
 
-            #region Protagonista_Juego
-            id = 1;
-            var fakerProtagonistaJuego = new Bogus.Faker<Protagonista_Juego>()
-                .RuleFor(x => x.Id, f => id++)
-                .RuleFor(x => x.Id_Juego, f => random.Next(50))
-                .RuleFor(x => x.Id_Protagonista, f => random.Next(33))
-                .RuleFor(x => x.CreatedAt, DateTime.Now)
-                .RuleFor(x => x.CreatedBy, "JDLB");
+            //#region Protagonista_Juego
+            //id = 1;
+            //var fakerProtagonistaJuego = new Bogus.Faker<Protagonista_Juego>()
+            //    .RuleFor(x => x.Id, f => id++)
+            //    .RuleFor(x => x.Id_Juego, f => random.Next(50))
+            //    .RuleFor(x => x.Id_Protagonista, f => random.Next(33))
+            //    .RuleFor(x => x.CreatedAt, DateTime.Now)
+            //    .RuleFor(x => x.CreatedBy, "JDLB");
 
-            foreach (var pj in fakerProtagonistaJuego.Generate(60))
-                modelBuilder.Entity<Plataforma_Juego>().HasData(pj);
-            #endregion
+            //foreach (var pj in fakerProtagonistaJuego.Generate(60))
+            //    modelBuilder.Entity<Plataforma_Juego>().HasData(pj);
+            //#endregion
 
-            #region Alquler_Det
-            id = 1;
-            var fakerAlquilerDet = new Bogus.Faker<Alquiler_Det>()
-                .RuleFor(x => x.Id, f => id++)
-                .RuleFor(x => x.Id_Alquiler, f => random.Next(100))
-                .RuleFor(x => x.Id_Juego, f => random.Next(50))
-                .RuleFor(x => x.Cantidad, f => random.Next(10))
-                .RuleFor(x => x.Cantidad, f => f.Random.Number(25000, 150000))
-                .RuleFor(x => x.CreatedAt, DateTime.Now)
-                .RuleFor(x => x.CreatedBy, "JDLB");
+            //#region Alquler_Det
+            //id = 1;
+            //var fakerAlquilerDet = new Bogus.Faker<Alquiler_Det>()
+            //    .RuleFor(x => x.Id, f => id++)
+            //    .RuleFor(x => x.Id_Alquiler, f => random.Next(100))
+            //    .RuleFor(x => x.Id_Juego, f => random.Next(50))
+            //    .RuleFor(x => x.Cantidad, f => random.Next(10))
+            //    .RuleFor(x => x.Cantidad, f => f.Random.Number(25000, 150000))
+            //    .RuleFor(x => x.CreatedAt, DateTime.Now)
+            //    .RuleFor(x => x.CreatedBy, "JDLB");
 
-            foreach (var ad in fakerAlquilerDet.Generate(100))
-                modelBuilder.Entity<Alquiler_Det>().HasData(ad);
-            #endregion
+            //foreach (var ad in fakerAlquilerDet.Generate(100))
+            //    modelBuilder.Entity<Alquiler_Det>().HasData(ad);
+            //#endregion
         }
 
     }
