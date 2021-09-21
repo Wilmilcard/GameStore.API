@@ -12,9 +12,15 @@ namespace GameStore.API
     {
         public static IServiceCollection AddCustomizedServices(this IServiceCollection services)
         {
+            services.AddTransient<IAlquilerServices, AlquilerServices>();
+            services.AddTransient<IClienteServices, ClienteServices>();
+            services.AddTransient<IDirectorServices, DirectorServices>();
             services.AddTransient<IEstadoServices, EstadoServices>();
+            services.AddTransient<IJuegoServices, JuegoServices>();
             services.AddTransient<IMarcaServices, MarcaServices>();
-
+            services.AddTransient<IPlataformaServices, PlataformaServices>();
+            services.AddTransient<IProtagonistaServices, ProtagonistaServices>();
+            
             return services;
         }
     }
