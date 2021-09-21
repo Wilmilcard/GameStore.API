@@ -708,7 +708,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 1,
                     Nombre = "Assassins Creed I",
-                    Id_Director = 1,
+                    Id_Director = random.Next(1,22),
+                    Precio = random.Next(15000,25000),
+                    Stock = random.Next(2,15),
                     Lanzamiento = new DateTime(2001, 5, 13),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -717,7 +719,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 2,
                     Nombre = "Assassins Creed Valhalla",
-                    Id_Director = 2,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -726,7 +730,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 3,
                     Nombre = "GTA III",
-                    Id_Director = 3,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -735,7 +741,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 4,
                     Nombre = "GTA Vice City",
-                    Id_Director = 5,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -744,7 +752,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 5,
                     Nombre = "GTA San Andreas",
-                    Id_Director = 4,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -753,7 +763,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 6,
                     Nombre = "GTA IV",
-                    Id_Director = 14,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -762,7 +774,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 7,
                     Nombre = "GTA V",
-                    Id_Director = 2,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -771,7 +785,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 8,
                     Nombre = "FIFA 17",
-                    Id_Director = 22,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -780,7 +796,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 9,
                     Nombre = "FIFA 18",
-                    Id_Director = 20,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -789,7 +807,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 10,
                     Nombre = "FIFA 19",
-                    Id_Director = 16,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -798,7 +818,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 11,
                     Nombre = "FIFA 20",
-                    Id_Director = 19,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -807,7 +829,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 12,
                     Nombre = "FIFA 21",
-                    Id_Director = 18,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -816,7 +840,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 13,
                     Nombre = "Minecraft",
-                    Id_Director = 3,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -825,7 +851,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 14,
                     Nombre = "Gears Of War",
-                    Id_Director = 4,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -834,7 +862,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 15,
                     Nombre = "Watch_Dogs",
-                    Id_Director = 8,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -843,7 +873,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 16,
                     Nombre = "Watch_Dogs 2",
-                    Id_Director = 7,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -852,7 +884,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 17,
                     Nombre = "The Witcher",
-                    Id_Director = 7,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -861,7 +895,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 18,
                     Nombre = "The Witcher 2",
-                    Id_Director = 7,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -870,7 +906,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 19,
                     Nombre = "The Witcher 3",
-                    Id_Director = 6,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -879,7 +917,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 20,
                     Nombre = "Pokemon",
-                    Id_Director = 4,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -888,7 +928,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 21,
                     Nombre = "Age Of Empires",
-                    Id_Director = 11,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -897,7 +939,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 22,
                     Nombre = "Age Of Empires II",
-                    Id_Director = 12,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -906,7 +950,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 23,
                     Nombre = "Age Of Empires III",
-                    Id_Director = 12,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -915,7 +961,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 24,
                     Nombre = "Age Of Empires IV",
-                    Id_Director = 8,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -924,7 +972,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 25,
                     Nombre = "Red Dead Redemption II",
-                    Id_Director = 23,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -933,7 +983,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 26,
                     Nombre = "DOOM",
-                    Id_Director = 1,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -942,7 +994,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 27,
                     Nombre = "Pong",
-                    Id_Director = 2,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -951,7 +1005,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 28,
                     Nombre = "The Sims",
-                    Id_Director = 10,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -960,7 +1016,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 29,
                     Nombre = "The Sims 2",
-                    Id_Director = 12,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -969,7 +1027,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 30,
                     Nombre = "Halo",
-                    Id_Director = 13,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -978,7 +1038,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 31,
                     Nombre = "Angry Birds",
-                    Id_Director = 15,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -987,7 +1049,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 32,
                     Nombre = "Plants vs Zombies",
-                    Id_Director = 17,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -996,7 +1060,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 33,
                     Nombre = "Battlefield 3",
-                    Id_Director = 2,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -1005,7 +1071,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 34,
                     Nombre = "Fligth Simulation",
-                    Id_Director = 6,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -1014,7 +1082,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 35,
                     Nombre = "Chivarly II",
-                    Id_Director = 9,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -1023,7 +1093,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 36,
                     Nombre = "Pureya",
-                    Id_Director = 11,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -1032,7 +1104,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 37,
                     Nombre = "Rust",
-                    Id_Director = 17,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -1041,7 +1115,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 38,
                     Nombre = "Mass Effect: Legendary Edition",
-                    Id_Director = 21,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -1050,7 +1126,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 39,
                     Nombre = "Cyberpunk 2077",
-                    Id_Director = 21,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -1059,7 +1137,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 40,
                     Nombre = "The Last of Us 2",
-                    Id_Director = 18,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -1068,7 +1148,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 41,
                     Nombre = "Overwatch",
-                    Id_Director = 23,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -1077,7 +1159,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 42,
                     Nombre = "NBA 2K21",
-                    Id_Director = 10,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -1086,7 +1170,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 43,
                     Nombre = "Fortnite",
-                    Id_Director = 23,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -1095,7 +1181,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 44,
                     Nombre = "Star Wars: Squadrons",
-                    Id_Director = 1,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -1104,7 +1192,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 45,
                     Nombre = "Resident Evil 8: Village",
-                    Id_Director = 2,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -1113,7 +1203,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 46,
                     Nombre = "Heroes of the Storm",
-                    Id_Director = 8,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -1122,7 +1214,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 47,
                     Nombre = "Battefield 4",
-                    Id_Director = 16,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -1131,7 +1225,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 48,
                     Nombre = "Battlefield 2042",
-                    Id_Director = 13,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -1140,7 +1236,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 49,
                     Nombre = "florence",
-                    Id_Director = 12,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -1149,7 +1247,9 @@ namespace GameStore.Domain.Seeders
                 {
                     Id = 50,
                     Nombre = "portal",
-                    Id_Director = 17,
+                    Id_Director = random.Next(1, 22),
+                    Precio = random.Next(15000, 25000),
+                    Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
