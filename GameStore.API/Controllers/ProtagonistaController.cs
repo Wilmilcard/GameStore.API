@@ -15,15 +15,15 @@ namespace GameStore.API.Controllers
 {
     [Route("v1/api/[controller]")]
     [ApiController]
-    public class EstadoController : ControllerBase
+    public class ProtagonistaController : ControllerBase
     {
-        private readonly IEstadoServices _estadoService;
+        private readonly IProtagonistaServices _protagonistaService;
         private readonly IConfiguration Configuration;
         private readonly GameStoreDbContext _context;
 
-        public EstadoController(IEstadoServices estadoService, IConfiguration configuration, GameStoreDbContext context)
+        public ProtagonistaController(IProtagonistaServices protagonistaService, IConfiguration configuration, GameStoreDbContext context)
         {
-            _estadoService = estadoService;
+            _protagonistaService = protagonistaService;
             Configuration = configuration;
             _context = context;
         }
@@ -33,7 +33,7 @@ namespace GameStore.API.Controllers
         {
             try
             {
-                var query = _estadoService
+                var query = _protagonistaService
                     .QueryNoTracking();
 
                 var response = new
@@ -60,7 +60,7 @@ namespace GameStore.API.Controllers
         {
             try
             {
-                var query = _estadoService
+                var query = _protagonistaService
                     .QueryNoTracking()
                     .Where(x => x.Id == id)
                     .FirstOrDefault();
@@ -85,21 +85,21 @@ namespace GameStore.API.Controllers
         }
 
         [HttpPost()]
-        public async Task<IActionResult> Create([FromBody] Estado request)
+        public async Task<IActionResult> Create([FromBody] Protagonista request)
         {
             try
             {
                 if (request == null)
                     return BadRequest(new { success = false, error = 400, content = "La informacion que envio esta vacia" });
 
-                Estado e = new Estado
+                Protagonista p = new Protagonista
                 {
                     Nombre = request.Nombre,
                     CreatedAt = Utils.Globals.GetFechaActual(),
                     CreatedBy = request.CreatedBy
                 };
 
-                await _estadoService.AddAsync(e);
+                await _protagonistaService.AddAsync(p);
 
                 var response = new
                 {
@@ -122,23 +122,23 @@ namespace GameStore.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] Estado request)
+        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] Protagonista request)
         {
             try
             {
 
                 using (var transaccion = _context.Database.BeginTransaction())
                 {
-                    var e = _estadoService.GetByIdAsync(id).Result;
-                    if (e != null)
+                    var p = _protagonistaService.GetByIdAsync(id).Result;
+                    if (p != null)
                     {
-                        e.Id = request.Id;
-                        e.Nombre = request.Nombre;
-                        e.CreatedAt = request.CreatedAt;
-                        e.CreatedBy = request.CreatedBy;
-                        e.UpdatedAt = Utils.Globals.GetFechaActual();
+                        p.Id = request.Id;
+                        p.Nombre = request.Nombre;
+                        p.CreatedAt = request.CreatedAt;
+                        p.CreatedBy = request.CreatedBy;
+                        p.UpdatedAt = Utils.Globals.GetFechaActual();
 
-                        await _estadoService.UpdateAsync(e);
+                        await _protagonistaService.UpdateAsync(p);
                         _context.SaveChanges();
                         transaccion.Commit();
                     }
@@ -164,12 +164,12 @@ namespace GameStore.API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var e = _estadoService.QueryNoTracking().Where(x => x.Id == id).FirstOrDefault();
-            if (e != null)
+            var p = _protagonistaService.QueryNoTracking().Where(x => x.Id == id).FirstOrDefault();
+            if (p != null)
             {
                 try
                 {
-                    var rpta = _estadoService.DeleteAsync(e).Result;
+                    var rpta = _protagonistaService.DeleteAsync(p).Result;
                     var response = new
                     {
                         success = true
@@ -192,7 +192,7 @@ namespace GameStore.API.Controllers
                 var response = new
                 {
                     success = false,
-                    error = "No se encontro Estado.",
+                    error = "No se encontro Protagonista.",
                     errorCode = 400
                 };
                 return new BadRequestObjectResult(response);

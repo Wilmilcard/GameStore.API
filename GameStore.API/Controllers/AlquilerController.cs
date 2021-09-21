@@ -1,8 +1,6 @@
 ﻿using GameStore.API.Interfaces;
 using GameStore.Domain.DB;
 using GameStore.Domain.Models;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -15,15 +13,15 @@ namespace GameStore.API.Controllers
 {
     [Route("v1/api/[controller]")]
     [ApiController]
-    public class EstadoController : ControllerBase
+    public class AlquilerController : ControllerBase
     {
-        private readonly IEstadoServices _estadoService;
+        private readonly IAlquilerServices _alquilerService;
         private readonly IConfiguration Configuration;
         private readonly GameStoreDbContext _context;
 
-        public EstadoController(IEstadoServices estadoService, IConfiguration configuration, GameStoreDbContext context)
+        public AlquilerController(IAlquilerServices alquilerService, IConfiguration configuration, GameStoreDbContext context)
         {
-            _estadoService = estadoService;
+            _alquilerService = alquilerService;
             Configuration = configuration;
             _context = context;
         }
@@ -33,7 +31,7 @@ namespace GameStore.API.Controllers
         {
             try
             {
-                var query = _estadoService
+                var query = _alquilerService
                     .QueryNoTracking();
 
                 var response = new
@@ -60,7 +58,7 @@ namespace GameStore.API.Controllers
         {
             try
             {
-                var query = _estadoService
+                var query = _alquilerService
                     .QueryNoTracking()
                     .Where(x => x.Id == id)
                     .FirstOrDefault();
@@ -85,21 +83,25 @@ namespace GameStore.API.Controllers
         }
 
         [HttpPost()]
-        public async Task<IActionResult> Create([FromBody] Estado request)
+        public async Task<IActionResult> Create([FromBody] Alquiler request)
         {
             try
             {
                 if (request == null)
                     return BadRequest(new { success = false, error = 400, content = "La informacion que envio esta vacia" });
 
-                Estado e = new Estado
+                Alquiler a = new Alquiler
                 {
-                    Nombre = request.Nombre,
+                    Id_Cliente = request.Id_Cliente,
+                    Id_Estado = request.Id_Estado,
+                    Fecha_Devolucion = request.Fecha_Devolucion,
+                    Fecha_Reservacion = request.Fecha_Reservacion,
+                    Valor_Total = request.Valor_Total,
                     CreatedAt = Utils.Globals.GetFechaActual(),
                     CreatedBy = request.CreatedBy
                 };
 
-                await _estadoService.AddAsync(e);
+                await _alquilerService.AddAsync(a);
 
                 var response = new
                 {
@@ -122,23 +124,27 @@ namespace GameStore.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] Estado request)
+        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] Alquiler request)
         {
             try
             {
 
                 using (var transaccion = _context.Database.BeginTransaction())
                 {
-                    var e = _estadoService.GetByIdAsync(id).Result;
-                    if (e != null)
+                    var a = _alquilerService.GetByIdAsync(id).Result;
+                    if (a != null)
                     {
-                        e.Id = request.Id;
-                        e.Nombre = request.Nombre;
-                        e.CreatedAt = request.CreatedAt;
-                        e.CreatedBy = request.CreatedBy;
-                        e.UpdatedAt = Utils.Globals.GetFechaActual();
+                        a.Id = request.Id;
+                        a.Id_Cliente = request.Id_Cliente;
+                        a.Id_Estado = request.Id_Estado;
+                        a.Fecha_Devolucion = request.Fecha_Devolucion;
+                        a.Fecha_Reservacion = request.Fecha_Reservacion;
+                        a.Valor_Total = request.Valor_Total;
+                        a.CreatedAt = request.CreatedAt;
+                        a.CreatedBy = request.CreatedBy;
+                        a.UpdatedAt = Utils.Globals.GetFechaActual();
 
-                        await _estadoService.UpdateAsync(e);
+                        await _alquilerService.UpdateAsync(a);
                         _context.SaveChanges();
                         transaccion.Commit();
                     }
@@ -164,12 +170,12 @@ namespace GameStore.API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var e = _estadoService.QueryNoTracking().Where(x => x.Id == id).FirstOrDefault();
-            if (e != null)
+            var a = _alquilerService.QueryNoTracking().Where(x => x.Id == id).FirstOrDefault();
+            if (a != null)
             {
                 try
                 {
-                    var rpta = _estadoService.DeleteAsync(e).Result;
+                    var rpta = _alquilerService.DeleteAsync(a).Result;
                     var response = new
                     {
                         success = true
@@ -192,11 +198,12 @@ namespace GameStore.API.Controllers
                 var response = new
                 {
                     success = false,
-                    error = "No se encontro Estado.",
+                    error = "No se encontro Alquiler.",
                     errorCode = 400
                 };
                 return new BadRequestObjectResult(response);
             }
         }
+
     }
 }

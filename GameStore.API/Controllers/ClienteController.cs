@@ -1,8 +1,6 @@
 ﻿using GameStore.API.Interfaces;
 using GameStore.Domain.DB;
 using GameStore.Domain.Models;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -15,15 +13,15 @@ namespace GameStore.API.Controllers
 {
     [Route("v1/api/[controller]")]
     [ApiController]
-    public class EstadoController : ControllerBase
+    public class ClienteController : ControllerBase
     {
-        private readonly IEstadoServices _estadoService;
+        private readonly IClienteServices _clienteService;
         private readonly IConfiguration Configuration;
         private readonly GameStoreDbContext _context;
 
-        public EstadoController(IEstadoServices estadoService, IConfiguration configuration, GameStoreDbContext context)
+        public ClienteController(IClienteServices clienteService, IConfiguration configuration, GameStoreDbContext context)
         {
-            _estadoService = estadoService;
+            _clienteService = clienteService;
             Configuration = configuration;
             _context = context;
         }
@@ -33,7 +31,7 @@ namespace GameStore.API.Controllers
         {
             try
             {
-                var query = _estadoService
+                var query = _clienteService
                     .QueryNoTracking();
 
                 var response = new
@@ -60,7 +58,7 @@ namespace GameStore.API.Controllers
         {
             try
             {
-                var query = _estadoService
+                var query = _clienteService
                     .QueryNoTracking()
                     .Where(x => x.Id == id)
                     .FirstOrDefault();
@@ -85,21 +83,27 @@ namespace GameStore.API.Controllers
         }
 
         [HttpPost()]
-        public async Task<IActionResult> Create([FromBody] Estado request)
+        public async Task<IActionResult> Create([FromBody] Cliente request)
         {
             try
             {
                 if (request == null)
                     return BadRequest(new { success = false, error = 400, content = "La informacion que envio esta vacia" });
 
-                Estado e = new Estado
+                Cliente c = new Cliente
                 {
                     Nombre = request.Nombre,
+                    Apellido = request.Apellido,
+                    NombreCompleto = request.NombreCompleto,
+                    Email = request.Email,
+                    Nit = request.Nit,
+                    Telefono = request.Telefono,
+                    Nacimiento = request.Nacimiento,
                     CreatedAt = Utils.Globals.GetFechaActual(),
                     CreatedBy = request.CreatedBy
                 };
 
-                await _estadoService.AddAsync(e);
+                await _clienteService.AddAsync(c);
 
                 var response = new
                 {
@@ -122,23 +126,29 @@ namespace GameStore.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] Estado request)
+        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] Cliente request)
         {
             try
             {
 
                 using (var transaccion = _context.Database.BeginTransaction())
                 {
-                    var e = _estadoService.GetByIdAsync(id).Result;
-                    if (e != null)
+                    var c = _clienteService.GetByIdAsync(id).Result;
+                    if (c != null)
                     {
-                        e.Id = request.Id;
-                        e.Nombre = request.Nombre;
-                        e.CreatedAt = request.CreatedAt;
-                        e.CreatedBy = request.CreatedBy;
-                        e.UpdatedAt = Utils.Globals.GetFechaActual();
+                        c.Id = request.Id;
+                        c.Nombre = request.Nombre;
+                        c.Apellido = request.Apellido;
+                        c.NombreCompleto = request.NombreCompleto;
+                        c.Email = request.Email;
+                        c.Nit = request.Nit;
+                        c.Telefono = request.Telefono;
+                        c.Nacimiento = request.Nacimiento;
+                        c.CreatedAt = request.CreatedAt;
+                        c.CreatedBy = request.CreatedBy;
+                        c.UpdatedAt = Utils.Globals.GetFechaActual();
 
-                        await _estadoService.UpdateAsync(e);
+                        await _clienteService.UpdateAsync(c);
                         _context.SaveChanges();
                         transaccion.Commit();
                     }
@@ -164,12 +174,12 @@ namespace GameStore.API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var e = _estadoService.QueryNoTracking().Where(x => x.Id == id).FirstOrDefault();
-            if (e != null)
+            var c = _clienteService.QueryNoTracking().Where(x => x.Id == id).FirstOrDefault();
+            if (c != null)
             {
                 try
                 {
-                    var rpta = _estadoService.DeleteAsync(e).Result;
+                    var rpta = _clienteService.DeleteAsync(c).Result;
                     var response = new
                     {
                         success = true
@@ -192,7 +202,7 @@ namespace GameStore.API.Controllers
                 var response = new
                 {
                     success = false,
-                    error = "No se encontro Estado.",
+                    error = "No se encontro Cliente.",
                     errorCode = 400
                 };
                 return new BadRequestObjectResult(response);
