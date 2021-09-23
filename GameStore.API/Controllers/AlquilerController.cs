@@ -3,6 +3,7 @@ using GameStore.Domain.DB;
 using GameStore.Domain.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,9 @@ namespace GameStore.API.Controllers
             try
             {
                 var query = _alquilerService
-                    .QueryNoTracking();
+                    .QueryNoTracking() //ajustar lo de include
+                    .Include(x => x.Cliente)
+                    .Include(x => x.Estado);
 
                 var response = new
                 {
