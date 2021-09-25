@@ -13,9 +13,9 @@ namespace GameStore.Domain.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
-        [Column("Id")]
-        public int Id { get; set; }
-        public int Id_Marca { get; set; }
+        [Column("DirectorId")]
+        public int DirectorId { get; set; }
+        public int MarcaId { get; set; }
         [StringLength(80)]
         [Column(TypeName = "VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci")]
         public string Nombre { get; set; }

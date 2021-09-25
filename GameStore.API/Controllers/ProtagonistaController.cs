@@ -62,7 +62,7 @@ namespace GameStore.API.Controllers
             {
                 var query = _protagonistaService
                     .QueryNoTracking()
-                    .Where(x => x.Id == id)
+                    .Where(x => x.ProtagonistaId == id)
                     .FirstOrDefault();
 
                 var response = new
@@ -132,7 +132,7 @@ namespace GameStore.API.Controllers
                     var p = _protagonistaService.GetByIdAsync(id).Result;
                     if (p != null)
                     {
-                        p.Id = request.Id;
+                        p.ProtagonistaId = request.ProtagonistaId;
                         p.Nombre = request.Nombre;
                         p.CreatedAt = request.CreatedAt;
                         p.CreatedBy = request.CreatedBy;
@@ -164,7 +164,7 @@ namespace GameStore.API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var p = _protagonistaService.QueryNoTracking().Where(x => x.Id == id).FirstOrDefault();
+            var p = _protagonistaService.QueryNoTracking().Where(x => x.ProtagonistaId == id).FirstOrDefault();
             if (p != null)
             {
                 try

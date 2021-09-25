@@ -24,35 +24,35 @@ namespace GameStore.Domain.Seeders
             modelBuilder.Entity<Estado>().HasData(
                new Estado
                {
-                   Id = 1,
+                   EstadoId = 1,
                    Nombre = "Activo",
                    CreatedAt = DateTime.Now,
                    CreatedBy = _CratedBy
                },
                new Estado
                {
-                   Id = 2,
+                   EstadoId = 2,
                    Nombre = "Inactivo",
                    CreatedAt = DateTime.Now,
                    CreatedBy = _CratedBy
                },
                new Estado
                {
-                   Id = 3,
+                   EstadoId = 3,
                    Nombre = "Devuelto",
                    CreatedAt = DateTime.Now,
                    CreatedBy = _CratedBy
                },
                new Estado
                {
-                   Id = 4,
+                   EstadoId = 4,
                    Nombre = "Prestamo",
                    CreatedAt = DateTime.Now,
                    CreatedBy = _CratedBy
                },
                new Estado
                {
-                   Id = 5,
+                   EstadoId = 5,
                    Nombre = "Error",
                    CreatedAt = DateTime.Now,
                    CreatedBy = _CratedBy
@@ -64,231 +64,231 @@ namespace GameStore.Domain.Seeders
             modelBuilder.Entity<Protagonista>().HasData(
                 new Protagonista
                 {
-                    Id = 1,
+                    ProtagonistaId = 1,
                     Nombre = "Mario Bross",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 2,
+                    ProtagonistaId = 2,
                     Nombre = "Tommy Vercetti",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 3,
+                    ProtagonistaId = 3,
                     Nombre = "Altaïr Ibn-La'Ahad",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 4,
+                    ProtagonistaId = 4,
                     Nombre = "Natan Drake",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 5,
+                    ProtagonistaId = 5,
                     Nombre = "Crash Bandicoot",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 6,
+                    ProtagonistaId = 6,
                     Nombre = "Samus Aran",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 7,
+                    ProtagonistaId = 7,
                     Nombre = "John-117",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 8,
+                    ProtagonistaId = 8,
                     Nombre = "Aiden Perce",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 9,
+                    ProtagonistaId = 9,
                     Nombre = "Carl Jhonson",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 10,
+                    ProtagonistaId = 10,
                     Nombre = "Red",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 11,
+                    ProtagonistaId = 11,
                     Nombre = "Crazy Dave",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 12,
+                    ProtagonistaId = 12,
                     Nombre = "Spyro",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 13,
+                    ProtagonistaId = 13,
                     Nombre = "Marcus Fenix",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 14,
+                    ProtagonistaId = 14,
                     Nombre = "Vass",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 15,
+                    ProtagonistaId = 15,
                     Nombre = "Gordon Freeman",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 16,
+                    ProtagonistaId = 16,
                     Nombre = "Joel",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 17,
+                    ProtagonistaId = 17,
                     Nombre = "Jill Valentine",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 18,
+                    ProtagonistaId = 18,
                     Nombre = "Zelda",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 19,
+                    ProtagonistaId = 19,
                     Nombre = "Link",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 20,
+                    ProtagonistaId = 20,
                     Nombre = "Glados",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 21,
+                    ProtagonistaId = 21,
                     Nombre = "Meet Boy",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 22,
+                    ProtagonistaId = 22,
                     Nombre = "Geralt de Rivia",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 23,
+                    ProtagonistaId = 23,
                     Nombre = "Steve",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 24,
+                    ProtagonistaId = 24,
                     Nombre = "Ellie",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 25,
+                    ProtagonistaId = 25,
                     Nombre = "Faith",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 26,
+                    ProtagonistaId = 26,
                     Nombre = "Bayonetta",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 27,
+                    ProtagonistaId = 27,
                     Nombre = "Tracer",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 28,
+                    ProtagonistaId = 28,
                     Nombre = "Pacman",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 29,
+                    ProtagonistaId = 29,
                     Nombre = "Chris Redfield",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 30,
+                    ProtagonistaId = 30,
                     Nombre = "Leon S. Kennedy",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 31,
+                    ProtagonistaId = 31,
                     Nombre = "Agente 47",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 32,
+                    ProtagonistaId = 32,
                     Nombre = "Haytham Kenway",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Protagonista
                 {
-                    Id = 33,
+                    ProtagonistaId = 33,
                     Nombre = "Lara Croft",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -300,63 +300,63 @@ namespace GameStore.Domain.Seeders
             modelBuilder.Entity<Marca>().HasData(
                 new Marca
                 {
-                    Id = 1,
+                    MarcaId = 1,
                     Nombre = "Microsoft",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Marca
                 {
-                    Id = 2,
+                    MarcaId = 2,
                     Nombre = "Sony",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Marca
                 {
-                    Id = 3,
+                    MarcaId = 3,
                     Nombre = "EA",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Marca
                 {
-                    Id = 4,
+                    MarcaId = 4,
                     Nombre = "Ubisoft",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Marca
                 {
-                    Id = 5,
+                    MarcaId = 5,
                     Nombre = "Rovio",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Marca
                 {
-                    Id = 6,
+                    MarcaId = 6,
                     Nombre = "Activision",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Marca
                 {
-                    Id = 7,
+                    MarcaId = 7,
                     Nombre = "Nintendo",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Marca
                 {
-                    Id = 8,
+                    MarcaId = 8,
                     Nombre = "Rockstar",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Marca
                 {
-                    Id = 9,
+                    MarcaId = 9,
                     Nombre = "CD Project Red",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -368,112 +368,112 @@ namespace GameStore.Domain.Seeders
             modelBuilder.Entity<Plataforma>().HasData(
                 new Plataforma
                 {
-                    Id = 1,
+                    PlataformaId = 1,
                     Nombre = "PC",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Plataforma
                 {
-                    Id = 2,
+                    PlataformaId = 2,
                     Nombre = "Xbox",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Plataforma
                 {
-                    Id = 3,
+                    PlataformaId = 3,
                     Nombre = "Xbox 360",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Plataforma
                 {
-                    Id = 4,
+                    PlataformaId = 4,
                     Nombre = "Xbox ONE",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Plataforma
                 {
-                    Id = 5,
+                    PlataformaId = 5,
                     Nombre = "Xbox X",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Plataforma
                 {
-                    Id = 6,
+                    PlataformaId = 6,
                     Nombre = "PSP Vita",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Plataforma
                 {
-                    Id = 7,
+                    PlataformaId = 7,
                     Nombre = "PlayStation",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Plataforma
                 {
-                    Id = 8,
+                    PlataformaId = 8,
                     Nombre = "PlayStation 2",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Plataforma
                 {
-                    Id = 9,
+                    PlataformaId = 9,
                     Nombre = "PlayStation 3",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Plataforma
                 {
-                    Id = 10,
+                    PlataformaId = 10,
                     Nombre = "PlayStation 4",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Plataforma
                 {
-                    Id = 11,
+                    PlataformaId = 11,
                     Nombre = "PlayStation 5",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Plataforma
                 {
-                    Id = 12,
+                    PlataformaId = 12,
                     Nombre = "Nintendo 64",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Plataforma
                 {
-                    Id = 13,
+                    PlataformaId = 13,
                     Nombre = "Nintendo DS",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Plataforma
                 {
-                    Id = 14,
+                    PlataformaId = 14,
                     Nombre = "Nintendo Switch",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Plataforma
                 {
-                    Id = 15,
+                    PlataformaId = 15,
                     Nombre = "Android",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Plataforma
                 {
-                    Id = 16,
+                    PlataformaId = 16,
                     Nombre = "IOS",
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
@@ -483,7 +483,7 @@ namespace GameStore.Domain.Seeders
 
             #region Cliente
             var fakerCliente = new Bogus.Faker<Cliente>()
-                    .RuleFor(x => x.Id, f => id++)
+                    .RuleFor(x => x.ClienteId, f => id++)
                     .RuleFor(x => x.Nombre, f => f.Person.FirstName)
                     .RuleFor(x => x.Apellido, f => f.Person.LastName)
                     .RuleFor(x => x.NombreCompleto, f => f.Person.FullName)
@@ -501,8 +501,8 @@ namespace GameStore.Domain.Seeders
             #region Alquiler
             id = 1;
             var fakerAlquiler = new Bogus.Faker<Alquiler>()
-                .RuleFor(x => x.Id, f => id++)
-                .RuleFor(x => x.Id_Cliente, f => random.Next(50))
+                .RuleFor(x => x.AlquilerId, f => id++)
+                .RuleFor(x => x.ClienteId, f => random.Next(1,50))
                 .RuleFor(x => x.Valor_Total, f => f.Random.Number(25000, 150000))
                 .RuleFor(x => x.CreatedAt, DateTime.Now)
                 .RuleFor(x => x.CreatedBy, _CratedBy);
@@ -515,7 +515,7 @@ namespace GameStore.Domain.Seeders
 
                 a.Fecha_Reservacion = _r;
                 a.Fecha_Devolucion = _d;
-                a.Id_Estado = random.Next(100) <= 50 ? 4 : 3;
+                a.EstadoId = random.Next(100) <= 50 ? 4 : 3;
 
                 modelBuilder.Entity<Alquiler>().HasData(a);
             }
@@ -525,177 +525,177 @@ namespace GameStore.Domain.Seeders
             modelBuilder.Entity<Director>().HasData(
                 new Director
                 {
-                    Id = 1,
+                    DirectorId = 1,
                     Nombre = "Hideo Kojima",
-                    Id_Marca = random.Next(9),
+                    MarcaId = random.Next(1,9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Director
                 {
-                    Id = 2,
+                    DirectorId = 2,
                     Nombre = "Will Wriths",
-                    Id_Marca = random.Next(9),
+                    MarcaId = random.Next(1,9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Director
                 {
-                    Id = 3,
+                    DirectorId = 3,
                     Nombre = "Hidetaka Miyazaki",
-                    Id_Marca = random.Next(9),
+                    MarcaId = random.Next(1,9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Director
                 {
-                    Id = 4,
+                    DirectorId = 4,
                     Nombre = "Tim Schafer",
-                    Id_Marca = random.Next(9),
+                    MarcaId = random.Next(1,9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Director
                 {
-                    Id = 5,
+                    DirectorId = 5,
                     Nombre = "Ken Levine",
-                    Id_Marca = random.Next(9),
+                    MarcaId = random.Next(1,9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Director
                 {
-                    Id = 6,
+                    DirectorId = 6,
                     Nombre = "Fumito Ueda",
-                    Id_Marca = random.Next(9),
+                    MarcaId = random.Next(1,9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Director
                 {
-                    Id = 7,
+                    DirectorId = 7,
                     Nombre = "Yves Guillemot",
-                    Id_Marca = random.Next(9),
+                    MarcaId = random.Next(1,9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Director
                 {
-                    Id = 8,
+                    DirectorId = 8,
                     Nombre = "Gabe Newell",
-                    Id_Marca = random.Next(9),
+                    MarcaId = random.Next(1,9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Director
                 {
-                    Id = 9,
+                    DirectorId = 9,
                     Nombre = "Tom Howard",
-                    Id_Marca = random.Next(9),
+                    MarcaId = random.Next(1,9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Director
                 {
-                    Id = 10,
+                    DirectorId = 10,
                     Nombre = "Yoko Taro",
-                    Id_Marca = random.Next(9),
+                    MarcaId = random.Next(1,9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Director
                 {
-                    Id = 11,
+                    DirectorId = 11,
                     Nombre = "Shigeru Miyamoto",
-                    Id_Marca = random.Next(9),
+                    MarcaId = random.Next(1,9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Director
                 {
-                    Id = 12,
+                    DirectorId = 12,
                     Nombre = "Amy Hennig",
-                    Id_Marca = random.Next(9),
+                    MarcaId = random.Next(1,9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Director
                 {
-                    Id = 13,
+                    DirectorId = 13,
                     Nombre = "Michel Ancel",
-                    Id_Marca = random.Next(9),
+                    MarcaId = random.Next(1,9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Director
                 {
-                    Id = 14,
+                    DirectorId = 14,
                     Nombre = "Goichi Suda",
-                    Id_Marca = random.Next(9),
+                    MarcaId = random.Next(1,9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Director
                 {
-                    Id = 15,
+                    DirectorId = 15,
                     Nombre = "Warren Spector",
-                    Id_Marca = random.Next(9),
+                    MarcaId = random.Next(1,9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Director
                 {
-                    Id = 16,
+                    DirectorId = 16,
                     Nombre = "John Romero",
-                    Id_Marca = random.Next(9),
+                    MarcaId = random.Next(1,9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Director
                 {
-                    Id = 17,
+                    DirectorId = 17,
                     Nombre = "Yuji Horii",
-                    Id_Marca = random.Next(9),
+                    MarcaId = random.Next(1,9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Director
                 {
-                    Id = 18,
+                    DirectorId = 18,
                     Nombre = "Yuji Naka",
-                    Id_Marca = random.Next(9),
+                    MarcaId = random.Next(1,9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Director
                 {
-                    Id = 19,
+                    DirectorId = 19,
                     Nombre = "Sid Meier",
-                    Id_Marca = random.Next(9),
+                    MarcaId = random.Next(1,9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Director
                 {
-                    Id = 20,
+                    DirectorId = 20,
                     Nombre = "John Carmack",
-                    Id_Marca = random.Next(9),
+                    MarcaId = random.Next(1,9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Director
                 {
-                    Id = 21,
+                    DirectorId = 21,
                     Nombre = "Keiji Inafune",
-                    Id_Marca = random.Next(9),
+                    MarcaId = random.Next(1,9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 },
                 new Director
                 {
-                    Id = 22,
+                    DirectorId = 22,
                     Nombre = "Hironobu Sakaguchi",
-                    Id_Marca = random.Next(9),
+                    MarcaId = random.Next(1,9),
                     CreatedAt = DateTime.Now,
                     CreatedBy = _CratedBy
                 }
@@ -706,9 +706,9 @@ namespace GameStore.Domain.Seeders
             modelBuilder.Entity<Juego>().HasData(
                 new Juego
                 {
-                    Id = 1,
+                    JuegoId = 1,
                     Nombre = "Assassins Creed I",
-                    Id_Director = random.Next(1,22),
+                    DirectorId = random.Next(1,22),
                     Precio = random.Next(15000,25000),
                     Stock = random.Next(2,15),
                     Lanzamiento = new DateTime(2001, 5, 13),
@@ -717,9 +717,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 2,
+                    JuegoId = 2,
                     Nombre = "Assassins Creed Valhalla",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -728,9 +728,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 3,
+                    JuegoId = 3,
                     Nombre = "GTA III",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -739,9 +739,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 4,
+                    JuegoId = 4,
                     Nombre = "GTA Vice City",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -750,9 +750,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 5,
+                    JuegoId = 5,
                     Nombre = "GTA San Andreas",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -761,9 +761,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 6,
+                    JuegoId = 6,
                     Nombre = "GTA IV",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -772,9 +772,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 7,
+                    JuegoId = 7,
                     Nombre = "GTA V",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -783,9 +783,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 8,
+                    JuegoId = 8,
                     Nombre = "FIFA 17",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -794,9 +794,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 9,
+                    JuegoId = 9,
                     Nombre = "FIFA 18",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -805,9 +805,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 10,
+                    JuegoId = 10,
                     Nombre = "FIFA 19",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -816,9 +816,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 11,
+                    JuegoId = 11,
                     Nombre = "FIFA 20",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -827,9 +827,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 12,
+                    JuegoId = 12,
                     Nombre = "FIFA 21",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -838,9 +838,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 13,
+                    JuegoId = 13,
                     Nombre = "Minecraft",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -849,9 +849,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 14,
+                    JuegoId = 14,
                     Nombre = "Gears Of War",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -860,9 +860,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 15,
+                    JuegoId = 15,
                     Nombre = "Watch_Dogs",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -871,9 +871,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 16,
+                    JuegoId = 16,
                     Nombre = "Watch_Dogs 2",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -882,9 +882,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 17,
+                    JuegoId = 17,
                     Nombre = "The Witcher",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -893,9 +893,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 18,
+                    JuegoId = 18,
                     Nombre = "The Witcher 2",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -904,9 +904,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 19,
+                    JuegoId = 19,
                     Nombre = "The Witcher 3",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -915,9 +915,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 20,
+                    JuegoId = 20,
                     Nombre = "Pokemon",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -926,9 +926,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 21,
+                    JuegoId = 21,
                     Nombre = "Age Of Empires",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -937,9 +937,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 22,
+                    JuegoId = 22,
                     Nombre = "Age Of Empires II",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -948,9 +948,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 23,
+                    JuegoId = 23,
                     Nombre = "Age Of Empires III",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -959,9 +959,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 24,
+                    JuegoId = 24,
                     Nombre = "Age Of Empires IV",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -970,9 +970,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 25,
+                    JuegoId = 25,
                     Nombre = "Red Dead Redemption II",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -981,9 +981,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 26,
+                    JuegoId = 26,
                     Nombre = "DOOM",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -992,9 +992,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 27,
+                    JuegoId = 27,
                     Nombre = "Pong",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -1003,9 +1003,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 28,
+                    JuegoId = 28,
                     Nombre = "The Sims",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -1014,9 +1014,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 29,
+                    JuegoId = 29,
                     Nombre = "The Sims 2",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -1025,9 +1025,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 30,
+                    JuegoId = 30,
                     Nombre = "Halo",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -1036,9 +1036,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 31,
+                    JuegoId = 31,
                     Nombre = "Angry Birds",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -1047,9 +1047,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 32,
+                    JuegoId = 32,
                     Nombre = "Plants vs Zombies",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -1058,9 +1058,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 33,
+                    JuegoId = 33,
                     Nombre = "Battlefield 3",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -1069,9 +1069,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 34,
+                    JuegoId = 34,
                     Nombre = "Fligth Simulation",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -1080,9 +1080,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 35,
+                    JuegoId = 35,
                     Nombre = "Chivarly II",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -1091,9 +1091,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 36,
+                    JuegoId = 36,
                     Nombre = "Pureya",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -1102,9 +1102,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 37,
+                    JuegoId = 37,
                     Nombre = "Rust",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -1113,9 +1113,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 38,
+                    JuegoId = 38,
                     Nombre = "Mass Effect: Legendary Edition",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -1124,9 +1124,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 39,
+                    JuegoId = 39,
                     Nombre = "Cyberpunk 2077",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -1135,9 +1135,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 40,
+                    JuegoId = 40,
                     Nombre = "The Last of Us 2",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -1146,9 +1146,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 41,
+                    JuegoId = 41,
                     Nombre = "Overwatch",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -1157,9 +1157,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 42,
+                    JuegoId = 42,
                     Nombre = "NBA 2K21",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -1168,9 +1168,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 43,
+                    JuegoId = 43,
                     Nombre = "Fortnite",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -1179,9 +1179,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 44,
+                    JuegoId = 44,
                     Nombre = "Star Wars: Squadrons",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -1190,9 +1190,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 45,
+                    JuegoId = 45,
                     Nombre = "Resident Evil 8: Village",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -1201,9 +1201,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 46,
+                    JuegoId = 46,
                     Nombre = "Heroes of the Storm",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -1212,9 +1212,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 47,
+                    JuegoId = 47,
                     Nombre = "Battefield 4",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -1223,9 +1223,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 48,
+                    JuegoId = 48,
                     Nombre = "Battlefield 2042",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -1234,9 +1234,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 49,
+                    JuegoId = 49,
                     Nombre = "florence",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -1245,9 +1245,9 @@ namespace GameStore.Domain.Seeders
                 },
                 new Juego
                 {
-                    Id = 50,
+                    JuegoId = 50,
                     Nombre = "portal",
-                    Id_Director = random.Next(1, 22),
+                    DirectorId = random.Next(1, 22),
                     Precio = random.Next(15000, 25000),
                     Stock = random.Next(2, 15),
                     Lanzamiento = start.AddDays(random.Next(range)),
@@ -1259,43 +1259,43 @@ namespace GameStore.Domain.Seeders
 
             #region Plataforma_Juego
             id = 1;
-            var fakerPlataformaJuego = new Bogus.Faker<Plataforma_Juego>()
-                .RuleFor(x => x.Id, f => id++)
-                .RuleFor(x => x.Id_Juego, f => random.Next(50))
-                .RuleFor(x => x.Id_Plataforma, f => random.Next(16))
+            var fakerPlataformaJuego = new Bogus.Faker<PlataformaJuego>()
+                .RuleFor(x => x.PlataformaJuegoId, f => id++)
+                .RuleFor(x => x.JuegoId, f => random.Next(1,50))
+                .RuleFor(x => x.PlataformaId, f => random.Next(1,16))
                 .RuleFor(x => x.CreatedAt, DateTime.Now)
                 .RuleFor(x => x.CreatedBy, _CratedBy);
 
             foreach (var pj in fakerPlataformaJuego.Generate(100))
-                modelBuilder.Entity<Plataforma_Juego>().HasData(pj);
+                modelBuilder.Entity<PlataformaJuego>().HasData(pj);
             #endregion
 
             #region Protagonista_Juego
             id = 1;
-            var fakerProtagonistaJuego = new Bogus.Faker<Protagonista_Juego>()
-                .RuleFor(x => x.Id, f => id++)
-                .RuleFor(x => x.Id_Juego, f => random.Next(50))
-                .RuleFor(x => x.Id_Protagonista, f => random.Next(33))
+            var fakerProtagonistaJuego = new Bogus.Faker<ProtagonistaJuego>()
+                .RuleFor(x => x.ProtagonistaJuegoId, f => id++)
+                .RuleFor(x => x.JuegoId, f => random.Next(1,50))
+                .RuleFor(x => x.ProtagonistaId, f => random.Next(1,33))
                 .RuleFor(x => x.CreatedAt, DateTime.Now)
                 .RuleFor(x => x.CreatedBy, _CratedBy);
 
             foreach (var pj in fakerProtagonistaJuego.Generate(200))
-                modelBuilder.Entity<Protagonista_Juego>().HasData(pj);
+                modelBuilder.Entity<ProtagonistaJuego>().HasData(pj);
             #endregion
 
             #region Alquler_Det
             id = 1;
-            var fakerAlquilerDet = new Bogus.Faker<Alquiler_Det>()
-                .RuleFor(x => x.Id, f => id++)
-                .RuleFor(x => x.Id_Alquiler, f => random.Next(100))
-                .RuleFor(x => x.Id_Juego, f => random.Next(50))
-                .RuleFor(x => x.Cantidad, f => random.Next(10))
+            var fakerAlquilerDet = new Bogus.Faker<AlquilerDet>()
+                .RuleFor(x => x.AlquilerDetId, f => id++)
+                .RuleFor(x => x.AlquilerId, f => random.Next(1,100))
+                .RuleFor(x => x.JuegoId, f => random.Next(1,50))
+                .RuleFor(x => x.Cantidad, f => random.Next(1,10))
                 .RuleFor(x => x.Cantidad, f => f.Random.Number(25000, 150000))
                 .RuleFor(x => x.CreatedAt, DateTime.Now)
                 .RuleFor(x => x.CreatedBy, _CratedBy);
 
             foreach (var ad in fakerAlquilerDet.Generate(300))
-                modelBuilder.Entity<Alquiler_Det>().HasData(ad);
+                modelBuilder.Entity<AlquilerDet>().HasData(ad);
             #endregion
         }
 

@@ -8,25 +8,27 @@ using System.Threading.Tasks;
 
 namespace GameStore.Domain.Models
 {
-    [Table("Alquiler_Dets")]
-    public class Alquiler_Det : IAuditEntity
+    [Table("Plataforma_Juego")]
+    public class PlataformaJuego : IAuditEntity
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
-        [Column("Id")]
-        public int Id { get; set; }
-        public int Cantidad { get; set; }
-        public int Id_Alquiler { get; set; }
-        public int Id_Juego { get; set; }
-        public double Valor { get; set; }
+        [Column("PlataformaJuegoId")]
+        public int PlataformaJuegoId { get; set; }
+        public int JuegoId { get; set; }
+        public int PlataformaId { get; set; }
+
+
+        //Auditory
         public DateTime CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
         [StringLength(50)]
         [Column(TypeName = "VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci")]
         public string CreatedBy { get; set; }
 
-        //public Foreign Keys
-        public virtual Alquiler Alquiler { get; set; }
+
+        //Public Foreign Key
+        public virtual Plataforma Plataforma { get; set; }
         public virtual Juego Juego { get; set; }
     }
 }

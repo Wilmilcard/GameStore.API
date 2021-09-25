@@ -62,7 +62,7 @@ namespace GameStore.API.Controllers
             {
                 var query = _plataformaService
                     .QueryNoTracking()
-                    .Where(x => x.Id == id)
+                    .Where(x => x.PlataformaId == id)
                     .FirstOrDefault();
 
                 var response = new
@@ -132,7 +132,7 @@ namespace GameStore.API.Controllers
                     var p = _plataformaService.GetByIdAsync(id).Result;
                     if (p != null)
                     {
-                        p.Id = request.Id;
+                        p.PlataformaId = request.PlataformaId;
                         p.Nombre = request.Nombre;
                         p.CreatedAt = request.CreatedAt;
                         p.CreatedBy = request.CreatedBy;
@@ -164,7 +164,7 @@ namespace GameStore.API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var p = _plataformaService.QueryNoTracking().Where(x => x.Id == id).FirstOrDefault();
+            var p = _plataformaService.QueryNoTracking().Where(x => x.PlataformaId == id).FirstOrDefault();
             if (p != null)
             {
                 try

@@ -62,7 +62,7 @@ namespace GameStore.API.Controllers
             {
                 var query = _marcaService
                     .QueryNoTracking()
-                    .Where(x => x.Id == id)
+                    .Where(x => x.MarcaId == id)
                     .FirstOrDefault();
 
                 var response = new
@@ -132,7 +132,7 @@ namespace GameStore.API.Controllers
                     var m = _marcaService.GetByIdAsync(id).Result;
                     if (m != null)
                     {
-                        m.Id = request.Id;
+                        m.MarcaId = request.MarcaId;
                         m.Nombre = request.Nombre;
                         m.CreatedAt = request.CreatedAt;
                         m.CreatedBy = request.CreatedBy;
@@ -164,7 +164,7 @@ namespace GameStore.API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var m = _marcaService.QueryNoTracking().Where(x => x.Id == id).FirstOrDefault();
+            var m = _marcaService.QueryNoTracking().Where(x => x.MarcaId == id).FirstOrDefault();
             if (m != null)
             {
                 try

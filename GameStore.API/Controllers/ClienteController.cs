@@ -60,7 +60,7 @@ namespace GameStore.API.Controllers
             {
                 var query = _clienteService
                     .QueryNoTracking()
-                    .Where(x => x.Id == id)
+                    .Where(x => x.ClienteId == id)
                     .FirstOrDefault();
 
                 var response = new
@@ -136,7 +136,7 @@ namespace GameStore.API.Controllers
                     var c = _clienteService.GetByIdAsync(id).Result;
                     if (c != null)
                     {
-                        c.Id = request.Id;
+                        c.ClienteId = request.ClienteId;
                         c.Nombre = request.Nombre;
                         c.Apellido = request.Apellido;
                         c.NombreCompleto = request.NombreCompleto;
@@ -174,7 +174,7 @@ namespace GameStore.API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var c = _clienteService.QueryNoTracking().Where(x => x.Id == id).FirstOrDefault();
+            var c = _clienteService.QueryNoTracking().Where(x => x.ClienteId == id).FirstOrDefault();
             if (c != null)
             {
                 try

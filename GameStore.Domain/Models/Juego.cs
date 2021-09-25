@@ -13,14 +13,14 @@ namespace GameStore.Domain.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
-        [Column("Id")]
-        public int Id { get; set; }
+        [Column("JuegoId")]
+        public int JuegoId { get; set; }
         [StringLength(80)]
         [Column(TypeName = "VARCHAR(80) CHARACTER SET utf8 COLLATE utf8_unicode_ci")]
         public string Nombre { get; set; }
         public double Precio { get; set; }
         public DateTime? Lanzamiento { get; set; }
-        public int Id_Director { get; set; }
+        public int DirectorId { get; set; }
         public int Stock { get; set; }
         
         

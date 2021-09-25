@@ -60,7 +60,7 @@ namespace GameStore.API.Controllers
             {
                 var query = _juegoService
                     .QueryNoTracking()
-                    .Where(x => x.Id == id)
+                    .Where(x => x.JuegoId == id)
                     .FirstOrDefault();
 
                 var response = new
@@ -96,7 +96,7 @@ namespace GameStore.API.Controllers
                     Lanzamiento = request.Lanzamiento,
                     Precio = request.Precio,
                     Stock = request.Stock,
-                    Id_Director = request.Id_Director,
+                    DirectorId = request.DirectorId,
                     CreatedAt = Utils.Globals.GetFechaActual(),
                     CreatedBy = request.CreatedBy
                 };
@@ -134,12 +134,12 @@ namespace GameStore.API.Controllers
                     var j = _juegoService.GetByIdAsync(id).Result;
                     if (j != null)
                     {
-                        j.Id = request.Id;
+                        j.JuegoId = request.JuegoId;
                         j.Nombre = request.Nombre;
                         j.Precio = request.Precio;
                         j.Stock = request.Stock;
                         j.Lanzamiento = request.Lanzamiento;
-                        j.Id_Director = request.Id_Director;
+                        j.DirectorId = request.DirectorId;
                         j.CreatedAt = request.CreatedAt;
                         j.CreatedBy = request.CreatedBy;
                         j.UpdatedAt = Utils.Globals.GetFechaActual();
@@ -170,7 +170,7 @@ namespace GameStore.API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var j = _juegoService.QueryNoTracking().Where(x => x.Id == id).FirstOrDefault();
+            var j = _juegoService.QueryNoTracking().Where(x => x.JuegoId == id).FirstOrDefault();
             if (j != null)
             {
                 try

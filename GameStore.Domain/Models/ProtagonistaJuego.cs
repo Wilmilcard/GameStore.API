@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace GameStore.Domain.Models
 {
-    [Table("Plataforma_Juego")]
-    public class Plataforma_Juego : IAuditEntity
+    [Table("Protagonista_Juego")]
+    public class ProtagonistaJuego : IAuditEntity
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
-        [Column("Id")]
-        public int Id { get; set; }
-        public int Id_Juego { get; set; }
-        public int Id_Plataforma { get; set; }
-
+        [Column("ProtagonistaJuegoId")]
+        public int ProtagonistaJuegoId { get; set; }
+        public int JuegoId { get; set; }
+        public int ProtagonistaId { get; set; }
+        
 
         //Auditory
         public DateTime CreatedAt { get; set; }
@@ -28,7 +28,7 @@ namespace GameStore.Domain.Models
 
 
         //Public Foreign Key
-        public virtual Plataforma Plataforma { get; set; }
         public virtual Juego Juego { get; set; }
+        public virtual Protagonista Protagonista { get; set; }
     }
 }

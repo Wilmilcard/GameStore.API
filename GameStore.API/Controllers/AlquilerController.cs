@@ -63,7 +63,7 @@ namespace GameStore.API.Controllers
             {
                 var query = _alquilerService
                     .QueryNoTracking()
-                    .Where(x => x.Id == id)
+                    .Where(x => x.AlquilerId == id)
                     .FirstOrDefault();
 
                 var response = new
@@ -95,8 +95,8 @@ namespace GameStore.API.Controllers
 
                 Alquiler a = new Alquiler
                 {
-                    Id_Cliente = request.Id_Cliente,
-                    Id_Estado = request.Id_Estado,
+                    ClienteId = request.ClienteId,
+                    EstadoId = request.EstadoId,
                     Fecha_Devolucion = request.Fecha_Devolucion,
                     Fecha_Reservacion = request.Fecha_Reservacion,
                     Valor_Total = request.Valor_Total,
@@ -137,9 +137,9 @@ namespace GameStore.API.Controllers
                     var a = _alquilerService.GetByIdAsync(id).Result;
                     if (a != null)
                     {
-                        a.Id = request.Id;
-                        a.Id_Cliente = request.Id_Cliente;
-                        a.Id_Estado = request.Id_Estado;
+                        a.AlquilerId = request.AlquilerId;
+                        a.ClienteId = request.ClienteId;
+                        a.EstadoId = request.EstadoId;
                         a.Fecha_Devolucion = request.Fecha_Devolucion;
                         a.Fecha_Reservacion = request.Fecha_Reservacion;
                         a.Valor_Total = request.Valor_Total;
@@ -173,7 +173,7 @@ namespace GameStore.API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var a = _alquilerService.QueryNoTracking().Where(x => x.Id == id).FirstOrDefault();
+            var a = _alquilerService.QueryNoTracking().Where(x => x.AlquilerId == id).FirstOrDefault();
             if (a != null)
             {
                 try
