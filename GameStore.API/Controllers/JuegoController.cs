@@ -87,21 +87,25 @@ namespace GameStore.API.Controllers
         {
             try
             {
-                if (request == null)
-                    return BadRequest(new { success = false, error = 400, content = "La informacion que envio esta vacia" });
-
-                Juego j = new Juego
+                using (var transaccion  = _context.Database.BeginTransaction())
                 {
-                    Nombre = request.Nombre,
-                    Lanzamiento = request.Lanzamiento,
-                    Precio = request.Precio,
-                    Stock = request.Stock,
-                    DirectorId = request.DirectorId,
-                    CreatedAt = Utils.Globals.GetFechaActual(),
-                    CreatedBy = request.CreatedBy
-                };
+                    if (request == null)
+                        return BadRequest(new { success = false, error = 400, content = "La informacion que envio esta vacia" });
 
-                await _juegoService.AddAsync(j);
+                    Juego j = new Juego
+                    {
+                        Nombre = request.Nombre,
+                        Lanzamiento = request.Lanzamiento,
+                        Precio = request.Precio,
+                        Stock = request.Stock,
+                        DirectorId = request.DirectorId,
+                        CreatedAt = Utils.Globals.GetFechaActual(),
+                        CreatedBy = request.CreatedBy
+                    };
+
+                    await _juegoService.AddAsync(j);
+                    transaccion.Commit();
+                }
 
                 var response = new
                 {
