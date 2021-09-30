@@ -1,5 +1,14 @@
+
 <p align="center">
-<a href="https://nevergate.com.co/"><img src="https://nevergate.com.co/otros/portafolio/images/logo.png" width="200"></a>
+    <h3 align="center">Juan David Leon Barrera</h3>
+	<p align="center">
+		<img src="https://img.shields.io/static/v1?label=Tipo&message=Api%20Rest%20C%20Sharp&color=blueviolet" alt="template repository">
+		<img src="https://img.shields.io/static/v1?label=version&message=2.8&color=blue" alt="v1.2">
+		<img src="https://img.shields.io/static/v1?label=licencia&message=no%20tiene&color=green" alt="no tiene">
+	</p>
+    <p align="center">
+        <a href="https://nevergate.com.co/"><img src="https://nevergate.com.co/otros/portafolio/images/logo.png" width="200"></a>
+    </p>
 </p>
 
 
