@@ -1290,7 +1290,6 @@ namespace GameStore.Domain.Seeders
                 .RuleFor(x => x.AlquilerId, f => random.Next(1,100))
                 .RuleFor(x => x.JuegoId, f => random.Next(1,50))
                 .RuleFor(x => x.Cantidad, f => random.Next(1,10))
-                .RuleFor(x => x.Cantidad, f => f.Random.Number(25000, 150000))
                 .RuleFor(x => x.CreatedAt, DateTime.Now)
                 .RuleFor(x => x.CreatedBy, _CratedBy);
 
