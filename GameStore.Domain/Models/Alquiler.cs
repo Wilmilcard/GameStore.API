@@ -28,7 +28,12 @@ namespace GameStore.Domain.Models
         [StringLength(50)]
         [Column(TypeName = "VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci")]
         public string CreatedBy { get; set; }
-                
+
+
+        //List
+        public List<AlquilerDet> AlquilerDets { get; set; }
+
+
         //Public Foreign Key
         public virtual Cliente Cliente { get; set; }
         public virtual Estado Estado { get; set; }

@@ -31,7 +31,12 @@ namespace GameStore.Domain.Models
         [Column(TypeName = "VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci")]
         public string CreatedBy { get; set; }
 
-        
+
+        //Listas de las relaciones
+        public List<PlataformaJuego> PlataformaJuegos { get; set; }
+        public List<ProtagonistaJuego> ProtagonistaJuegos { get; set; }
+
+
         //Public Foreign Key
         public virtual Director Director { get; set; }
     }

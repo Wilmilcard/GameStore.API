@@ -1,8 +1,10 @@
-﻿using GameStore.API.Interfaces;
+﻿using GameStore.API.HttpRequestModels;
+using GameStore.API.Interfaces;
 using GameStore.Domain.DB;
 using GameStore.Domain.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -32,7 +34,10 @@ namespace GameStore.API.Controllers
             try
             {
                 var query = _juegoService
-                    .QueryNoTracking();
+                    .QueryNoTracking()
+                    .Include(x => x.Director)
+                    .Include(x => x.PlataformaJuegos)
+                    .Include(x => x.ProtagonistaJuegos);
 
                 var response = new
                 {
@@ -60,6 +65,9 @@ namespace GameStore.API.Controllers
             {
                 var query = _juegoService
                     .QueryNoTracking()
+                    .Include(x => x.Director)
+                    .Include(x => x.PlataformaJuegos)
+                    .Include(x => x.ProtagonistaJuegos)
                     .Where(x => x.JuegoId == id)
                     .FirstOrDefault();
 
@@ -83,7 +91,7 @@ namespace GameStore.API.Controllers
         }
 
         [HttpPost()]
-        public async Task<IActionResult> Create([FromBody] Juego request)
+        public async Task<IActionResult> Create([FromBody] JuegoCreateUpdate request)
         {
             try
             {
@@ -103,7 +111,20 @@ namespace GameStore.API.Controllers
                         CreatedBy = request.CreatedBy
                     };
 
+                    foreach(var p in request.Plataformas)
+                    {
+                        PlataformaJuego Add = new PlataformaJuego()
+                        {
+                            JuegoId = request.JuegoId,
+                            PlataformaId = p.PlataformaId,
+                            CreatedAt = Utils.Globals.GetFechaActual(),
+                            CreatedBy = request.CreatedBy
+                        };
+                        await _context.PlataformaJuego.AddAsync(Add);
+                    }
+
                     await _juegoService.AddAsync(j);
+                    _context.SaveChanges();
                     transaccion.Commit();
                 }
 
@@ -128,11 +149,10 @@ namespace GameStore.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] Juego request)
+        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] JuegoCreateUpdate request)
         {
             try
             {
-
                 using (var transaccion = _context.Database.BeginTransaction())
                 {
                     var j = _juegoService.GetByIdAsync(id).Result;
@@ -147,6 +167,22 @@ namespace GameStore.API.Controllers
                         j.CreatedAt = request.CreatedAt;
                         j.CreatedBy = request.CreatedBy;
                         j.UpdatedAt = Utils.Globals.GetFechaActual();
+
+                        var listP = _context.PlataformaJuego.Where(x => x.JuegoId == j.JuegoId);
+                        foreach (var p in listP)
+                            _context.PlataformaJuego.Remove(p);
+
+                        foreach (var p in request.Plataformas)
+                        {
+                            PlataformaJuego Add = new PlataformaJuego()
+                            {
+                                JuegoId = request.JuegoId,
+                                PlataformaId = p.PlataformaId,
+                                CreatedAt = Utils.Globals.GetFechaActual(),
+                                CreatedBy = request.CreatedBy
+                            };
+                            await _context.PlataformaJuego.AddAsync(Add);
+                        }
 
                         await _juegoService.UpdateAsync(j);
                         _context.SaveChanges();
@@ -179,7 +215,18 @@ namespace GameStore.API.Controllers
             {
                 try
                 {
-                    var rpta = _juegoService.DeleteAsync(j).Result;
+                    using (var transaccion = _context.Database.BeginTransaction())
+                    {
+                        var rpta = _juegoService.DeleteAsync(j).Result;
+
+                        var listP = _context.PlataformaJuego.Where(x => x.JuegoId == j.JuegoId);
+                        foreach (var p in listP)
+                            _context.PlataformaJuego.Remove(p);
+
+                        _context.SaveChanges();
+                        transaccion.Commit();
+                    }
+
                     var response = new
                     {
                         success = true
