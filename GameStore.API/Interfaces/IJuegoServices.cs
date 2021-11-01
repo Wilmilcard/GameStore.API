@@ -9,6 +9,6 @@ namespace GameStore.API.Interfaces
 {
     public interface IJuegoServices : IRepository<Juego>
     {
-
+        bool JuegoExiste(int id);
     }
 }

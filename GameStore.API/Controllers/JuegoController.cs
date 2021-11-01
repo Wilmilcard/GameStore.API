@@ -63,6 +63,9 @@ namespace GameStore.API.Controllers
         {
             try
             {
+                if(!_juegoService.JuegoExiste(id))
+                    return new BadRequestObjectResult(new { succes = false, data = "Juego no existe" });
+
                 var query = _juegoService
                     .QueryNoTracking()
                     .Include(x => x.Director)

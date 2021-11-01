@@ -14,5 +14,7 @@ namespace GameStore.API.Services
         {
 
         }
+
+        bool IJuegoServices.JuegoExiste(int id) => this.QueryNoTracking().Any(e => e.JuegoId == id);
     }
 }
