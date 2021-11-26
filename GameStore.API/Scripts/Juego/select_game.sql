@@ -1,0 +1,1 @@
+SELECT Nombre FROM Juego WHERE JuegoId = {0}

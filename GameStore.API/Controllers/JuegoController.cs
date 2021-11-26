@@ -93,6 +93,49 @@ namespace GameStore.API.Controllers
             }
         }
 
+        [HttpGet("[Action]/{id}")]
+        public async Task<IActionResult> QueryExample([FromRoute] int id)
+        {
+            try
+            {
+                if (!_juegoService.JuegoExiste(id))
+                    return new BadRequestObjectResult(new { succes = false, data = "Juego no existe" });
+
+                var juego_nombre = "";
+                using (var command = _context.Database.GetDbConnection().CreateCommand())
+                {
+                    command.CommandText = string.Format(System.IO.File.ReadAllText("Scripts\\Juego\\select_game.sql"), id);
+                    _context.Database.OpenConnection();
+                    var reader = await command.ExecuteReaderAsync();
+                    if (reader.HasRows)
+                    {
+                        while (await reader.ReadAsync())
+                        {
+                            juego_nombre = reader["Nombre"].ToString();
+                        }
+                    }
+                    _context.Database.CloseConnection();
+                }
+
+                var response = new
+                {
+                    success = true,
+                    data = juego_nombre
+                };
+                return new OkObjectResult(response);
+            }
+            catch (Exception ex)
+            {
+                var response = new
+                {
+                    success = false,
+                    error = ex.Message,
+                    errorCode = ex.HResult
+                };
+                return new BadRequestObjectResult(response);
+            }
+        }
+
         [HttpPost()]
         public async Task<IActionResult> Create([FromBody] JuegoCreateUpdate request)
         {
