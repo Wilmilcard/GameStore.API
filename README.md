@@ -90,8 +90,8 @@ esto creara las tablas y las llenara con el *sedder*
         - Traer todos los marcas: https://api-game-store.nevergate.com.co/api/marca
         - Traer solo un marca por Id: https://api-game-store.nevergate.com.co/api/marca/{id} donde el id es un numero
     - Protagonista
-        - Traer todos los marcas: https://api-game-store.nevergate.com.co/api/marca
-        - Traer solo un marca por Id: https://api-game-store.nevergate.com.co/api/marca/{id} donde el id es un numero
+        - Traer todos los marcas: https://api-game-store.nevergate.com.co/api/protagonista
+        - Traer solo un marca por Id: https://api-game-store.nevergate.com.co/api/protagonista/{id} donde el id es un numero
     - Estado
         - Traer todos los estados: https://api-game-store.nevergate.com.co/api/estado
         - Traer solo un estado por Id: https://api-game-store.nevergate.com.co/api/estado/{id} donde el id es un numero
