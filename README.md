@@ -22,6 +22,7 @@ Tambien existe una misma verision del api desarrollada en php Laravel 8. Asi que
 
 🍂 **[Version Php Laravel 8](https://github.com/Wilmilcard/PhpLaravel_Game-Store)** 🍂
 
+- **[Portal del Api](https://game-store-portal.nevergate.com.co/)**
 - **[Web del desarrollador](https://nevergate.com.co/)**
 - **[Link de la documentación (hay mucho mas de donde saque información)](https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application)**
 
